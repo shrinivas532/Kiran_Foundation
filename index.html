@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KIRAN Foundation — Kudachi | Youth Skill Development & Employment</title>
+  <meta name="description" content="KIRAN Foundation empowers rural youth in Kudachi, Belagavi District through skill development, vocational training, and employment support.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>">
+</head>
+<body data-lang="en">
+
+  <!-- ══════ NAVBAR ══════ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" aria-label="KIRAN Foundation Home">
+        <span class="logo-icon">☀</span>
+        <span data-en="KIRAN Foundation" data-kn="ಕಿರಣ ಫೌಂಡೇಶನ್">KIRAN Foundation</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about" data-en="About" data-kn="ನಮ್ಮ ಬಗ್ಗೆ">About</a></li>
+        <li><a href="#programs" data-en="Programs" data-kn="ಕಾರ್ಯಕ್ರಮಗಳು">Programs</a></li>
+        <li class="nav-dropdown">
+          <button class="nav-dropdown-btn" aria-expanded="false" aria-haspopup="true">
+            <span data-en="Media" data-kn="ಮಾಧ್ಯಮ">Media</span>
+            <svg width="10" height="6" viewBox="0 0 10 6" fill="currentColor"><path d="M1 1l4 4 4-4"/></svg>
+          </button>
+          <ul class="nav-dropdown-menu">
+            <li><a href="#gallery" data-en="Gallery" data-kn="ಗ್ಯಾಲರಿ">Gallery</a></li>
+            <li><a href="#podcast" data-en="Podcast" data-kn="ಪಾಡ್‌ಕಾಸ್ಟ್">Podcast</a></li>
+            <li><a href="#videos" data-en="Videos" data-kn="ವಿಡಿಯೋಗಳು">Videos</a></li>
+          </ul>
+        </li>
+        <li><a href="#impact" data-en="Impact" data-kn="ಪರಿಣಾಮ">Impact</a></li>
+        <li><a href="#stories" data-en="Stories" data-kn="ಕಥೆಗಳು">Stories</a></li>
+        <li><a href="#register" data-en="Register" data-kn="ನೋಂದಣಿ">Register</a></li>
+        <li><a href="#" data-open-modal="volunteer" data-en="Join Us" data-kn="ನಮ್ಮೊಂದಿಗೆ ಸೇರಿ">Join Us</a></li>
+        <li><a href="#contact" data-en="Contact" data-kn="ಸಂಪರ್ಕ">Contact</a></li>
+        <li>
+          <div class="lang-toggle">
+            <button class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
+            <button class="lang-btn" data-lang="kn" aria-label="ಕನ್ನಡಕ್ಕೆ ಬದಲಿಸಿ">ಕನ್ನಡ</button>
+          </div>
+        </li>
+      </ul>
+
+      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" role="menu">
+      <a href="#about" role="menuitem" data-en="About" data-kn="ನಮ್ಮ ಬಗ್ಗೆ">About</a>
+      <a href="#programs" role="menuitem" data-en="Programs" data-kn="ಕಾರ್ಯಕ್ರಮಗಳು">Programs</a>
+      <a href="#gallery" role="menuitem" data-en="Gallery" data-kn="ಗ್ಯಾಲರಿ">Gallery</a>
+      <a href="#podcast" role="menuitem" data-en="Podcast" data-kn="ಪಾಡ್‌ಕಾಸ್ಟ್">Podcast</a>
+      <a href="#videos" role="menuitem" data-en="Videos" data-kn="ವಿಡಿಯೋಗಳು">Videos</a>
+      <a href="#impact" role="menuitem" data-en="Impact" data-kn="ಪರಿಣಾಮ">Impact</a>
+      <a href="#stories" role="menuitem" data-en="Stories" data-kn="ಕಥೆಗಳು">Stories</a>
+      <a href="#register" role="menuitem" data-en="Register" data-kn="ನೋಂದಣಿ">Register</a>
+      <a href="#" role="menuitem" data-open-modal="volunteer" data-en="Join Us" data-kn="ನಮ್ಮೊಂದಿಗೆ ಸೇರಿ">Join Us</a>
+      <a href="#contact" role="menuitem" data-en="Contact" data-kn="ಸಂಪರ್ಕ">Contact</a>
+      <div class="mobile-lang-toggle">
+        <button class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
+        <button class="lang-btn" data-lang="kn" aria-label="ಕನ್ನಡಕ್ಕೆ ಬದಲಿಸಿ">ಕನ್ನಡ</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════ HERO ══════ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-sun"></div>
+    <div class="hero-rays"></div>
+
+    <!-- Crowd Silhouette -->
+    <div class="hero-silhouette">
+      <svg viewBox="0 0 1440 180" preserveAspectRatio="none" fill="#0D1B2A">
+        <path d="M0,180 L0,140 C20,130 30,120 50,125 C60,110 65,100 75,105 C85,90 95,85 110,95
+          C120,80 130,70 145,80 C155,65 165,60 180,72 C190,58 200,50 215,62
+          C225,48 240,42 255,55 C265,40 280,35 295,48 C305,35 320,30 335,42
+          C345,28 360,25 375,38 C385,25 400,22 415,35 C425,22 440,18 455,30
+          C465,18 480,15 495,28 C505,15 520,12 535,25 C545,12 560,10 575,22
+          C585,10 600,8 615,20 C625,8 640,6 655,18 C665,6 680,5 695,16
+          C705,5 720,4 735,15 C745,4 760,5 775,16 C785,5 800,6 815,18
+          C825,8 840,10 855,22 C865,10 880,12 895,25 C905,15 920,18 935,30
+          C945,22 960,25 975,38 C985,28 1000,30 1015,42 C1025,35 1040,38 1055,48
+          C1065,40 1080,42 1095,55 C1105,48 1120,50 1135,62 C1145,55 1160,58 1175,68
+          C1185,62 1200,65 1215,75 C1225,68 1240,72 1255,82 C1265,75 1280,80 1295,90
+          C1310,85 1325,95 1340,100 C1355,95 1370,105 1385,110 C1400,105 1420,120 1440,130
+          L1440,180 Z"/>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <div class="hero-badge" data-en="Youth Empowerment Initiative" data-kn="ಯುವ ಸಬಲೀಕರಣ ಉಪಕ್ರಮ">Youth Empowerment Initiative</div>
+      <h1>
+        <span data-en="A Ray of Light for" data-kn="ನಮ್ಮ ಯುವಕರಿಗೆ">A Ray of Light for</span><br>
+        <span class="highlight" data-en="Our Youth" data-kn="ಬೆಳಕಿನ ಕಿರಣ">Our Youth</span>
+        <button class="tts-btn" data-section="hero" aria-label="Read hero section aloud" title="Listen">🔊</button>
+      </h1>
+      <div class="tts-warning" data-section="hero"></div>
+      <p class="hero-sub" data-en="KIRAN Foundation empowers rural youth in Kudachi, Belagavi District through skill development, vocational training, and pathways to meaningful employment."
+         data-kn="ಕಿರಣ ಫೌಂಡೇಶನ್ ಕುದಚಿ, ಬೆಳಗಾವಿ ಜಿಲ್ಲೆಯ ಗ್ರಾಮೀಣ ಯುವಕರನ್ನು ಕೌಶಲ್ಯ ಅಭಿವೃದ್ಧಿ, ವೃತ್ತಿಪರ ತರಬೇತಿ ಮತ್ತು ಅರ್ಥಪೂರ್ಣ ಉದ್ಯೋಗದ ಮಾರ್ಗಗಳ ಮೂಲಕ ಸಬಲೀಕರಣಗೊಳಿಸುತ್ತದೆ.">
+        KIRAN Foundation empowers rural youth in Kudachi, Belagavi District through skill development, vocational training, and pathways to meaningful employment.
+      </p>
+      <div class="hero-buttons">
+        <button class="btn btn-primary" data-open-modal="registration" data-en="Register as Youth ✦" data-kn="ಯುವಕರಾಗಿ ನೋಂದಣಿ ✦">Register as Youth ✦</button>
+        <a href="#about" class="btn btn-outline" data-en="Learn More ↓" data-kn="ಇನ್ನಷ್ಟು ತಿಳಿಯಿರಿ ↓">Learn More ↓</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ ABOUT / VISION ══════ -->
+  <section id="about">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>
+          <span data-en="Our Vision" data-kn="ನಮ್ಮ ದೃಷ್ಟಿ">Our Vision</span>
+          <button class="tts-btn" data-section="about" aria-label="Read about section aloud" title="Listen">🔊</button>
+        </h2>
+        <div class="section-line"></div>
+        <div class="tts-warning" data-section="about"></div>
+        <p data-en="Building a self-reliant generation through knowledge, skills, and opportunity."
+           data-kn="ಜ್ಞಾನ, ಕೌಶಲ್ಯ ಮತ್ತು ಅವಕಾಶದ ಮೂಲಕ ಸ್ವಾವಲಂಬಿ ಪೀಳಿಗೆಯನ್ನು ನಿರ್ಮಿಸುವುದು.">
+          Building a self-reliant generation through knowledge, skills, and opportunity.
+        </p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <h3 data-en="Who We Are" data-kn="ನಾವು ಯಾರು">Who We Are</h3>
+          <p data-en="KIRAN Foundation (Knowledge, Innovation, Reform, Aspiration, Nurture) is a grassroots initiative based in Kudachi, Raibag Taluk, Belagavi District, Karnataka. We work directly with rural youth — many of whom are first-generation learners — to bridge the gap between education and employability."
+             data-kn="ಕಿರಣ ಫೌಂಡೇಶನ್ (ಜ್ಞಾನ, ನಾವೀನ್ಯತೆ, ಸುಧಾರಣೆ, ಆಕಾಂಕ್ಷೆ, ಪೋಷಣೆ) ಕರ್ನಾಟಕದ ಬೆಳಗಾವಿ ಜಿಲ್ಲೆ, ರಾಯಬಾಗ ತಾಲ್ಲೂಕಿನ ಕುದಚಿಯಲ್ಲಿ ನೆಲೆಗೊಂಡ ಒಂದು ತಳಮಟ್ಟದ ಉಪಕ್ರಮ. ನಾವು ಗ್ರಾಮೀಣ ಯುವಕರೊಂದಿಗೆ ನೇರವಾಗಿ ಕೆಲಸ ಮಾಡುತ್ತೇವೆ — ಅವರಲ್ಲಿ ಅನೇಕರು ಮೊದಲ ತಲೆಮಾರಿನ ಕಲಿಯುವವರು — ಶಿಕ್ಷಣ ಮತ್ತು ಉದ್ಯೋಗಾರ್ಹತೆ ನಡುವಿನ ಅಂತರವನ್ನು ಸೇತುವೆಯಾಗಿಸಲು.">
+            KIRAN Foundation (Knowledge, Innovation, Reform, Aspiration, Nurture) is a grassroots initiative based in Kudachi, Raibag Taluk, Belagavi District, Karnataka. We work directly with rural youth — many of whom are first-generation learners — to bridge the gap between education and employability.
+          </p>
+          <p data-en="Our mission: Every young person in our community deserves a path to dignified livelihood — regardless of their background."
+             data-kn="ನಮ್ಮ ಧ್ಯೇಯ: ನಮ್ಮ ಸಮುದಾಯದ ಪ್ರತಿ ಯುವಕನು ಅವರ ಹಿನ್ನೆಲೆಯ ಹೊರತಾಗಿಯೂ ಗೌರವಯುತ ಜೀವನೋಪಾಯದ ಹಾದಿಗೆ ಅರ್ಹರು.">
+            Our mission: Every young person in our community deserves a path to dignified livelihood — regardless of their background.
+          </p>
+        </div>
+        <div class="about-values">
+          <div class="value-card">
+            <div class="icon">💡</div>
+            <h4 data-en="Knowledge" data-kn="ಜ್ಞಾನ">Knowledge</h4>
+            <p data-en="Education-first approach" data-kn="ಶಿಕ್ಷಣ-ಮೊದಲ ವಿಧಾನ">Education-first approach</p>
+          </div>
+          <div class="value-card">
+            <div class="icon">🚀</div>
+            <h4 data-en="Innovation" data-kn="ನಾವೀನ್ಯತೆ">Innovation</h4>
+            <p data-en="Modern skills for a modern world" data-kn="ಆಧುನಿಕ ಜಗತ್ತಿಗೆ ಆಧುನಿಕ ಕೌಶಲ್ಯ">Modern skills for a modern world</p>
+          </div>
+          <div class="value-card">
+            <div class="icon">🌱</div>
+            <h4 data-en="Reform" data-kn="ಸುಧಾರಣೆ">Reform</h4>
+            <p data-en="Breaking cycles of unemployment" data-kn="ನಿರುದ್ಯೋಗದ ಚಕ್ರವನ್ನು ಮುರಿಯುವುದು">Breaking cycles of unemployment</p>
+          </div>
+          <div class="value-card">
+            <div class="icon">⭐</div>
+            <h4 data-en="Aspiration" data-kn="ಆಕಾಂಕ್ಷೆ">Aspiration</h4>
+            <p data-en="Nurturing ambition in every youth" data-kn="ಪ್ರತಿ ಯುವಕನಲ್ಲಿ ಮಹತ್ವಾಕಾಂಕ್ಷೆ ಬೆಳೆಸುವುದು">Nurturing ambition in every youth</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ PROGRAMS ══════ -->
+  <section id="programs">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>
+          <span data-en="Our Programs" data-kn="ನಮ್ಮ ಕಾರ್ಯಕ್ರಮಗಳು">Our Programs</span>
+          <button class="tts-btn" data-section="programs" aria-label="Read programs section aloud" title="Listen">🔊</button>
+        </h2>
+        <div class="section-line"></div>
+        <div class="tts-warning" data-section="programs"></div>
+        <p data-en="Comprehensive training pathways tailored for rural youth."
+           data-kn="ಗ್ರಾಮೀಣ ಯುವಕರಿಗೆ ಅನುಗುಣವಾಗಿ ಸಮಗ್ರ ತರಬೇತಿ ಮಾರ್ಗಗಳು.">
+          Comprehensive training pathways tailored for rural youth.
+        </p>
+      </div>
+
+      <div class="programs-grid">
+        <div class="program-card">
+          <div class="card-icon">💻</div>
+          <h3 data-en="Digital Literacy" data-kn="ಡಿಜಿಟಲ್ ಸಾಕ್ಷರತೆ">Digital Literacy</h3>
+          <p data-en="Computer basics, internet skills, smartphone usage, and digital safety — building confidence in the digital world."
+             data-kn="ಕಂಪ್ಯೂಟರ್ ಮೂಲಭೂತ ಅಂಶಗಳು, ಇಂಟರ್ನೆಟ್ ಕೌಶಲ್ಯಗಳು, ಸ್ಮಾರ್ಟ್‌ಫೋನ್ ಬಳಕೆ, ಮತ್ತು ಡಿಜಿಟಲ್ ಸುರಕ್ಷತೆ — ಡಿಜಿಟಲ್ ಜಗತ್ತಿನಲ್ಲಿ ಆತ್ಮವಿಶ್ವಾಸ ಬೆಳೆಸುವುದು.">
+            Computer basics, internet skills, smartphone usage, and digital safety — building confidence in the digital world.
+          </p>
+        </div>
+        <div class="program-card">
+          <div class="card-icon">🗣️</div>
+          <h3 data-en="Communication Skills" data-kn="ಸಂವಹನ ಕೌಶಲ್ಯಗಳು">Communication Skills</h3>
+          <p data-en="Spoken English, interview preparation, public speaking, and professional communication for workplace readiness."
+             data-kn="ಇಂಗ್ಲಿಷ್ ಮಾತನಾಡುವಿಕೆ, ಸಂದರ್ಶನ ತಯಾರಿ, ಸಾರ್ವಜನಿಕ ಭಾಷಣ, ಮತ್ತು ಕಾರ್ಯಸ್ಥಳ ಸಿದ್ಧತೆಗಾಗಿ ವೃತ್ತಿಪರ ಸಂವಹನ.">
+            Spoken English, interview preparation, public speaking, and professional communication for workplace readiness.
+          </p>
+        </div>
+        <div class="program-card">
+          <div class="card-icon">🔧</div>
+          <h3 data-en="Vocational Training" data-kn="ವೃತ್ತಿಪರ ತರಬೇತಿ">Vocational Training</h3>
+          <p data-en="Hands-on training in trades like tailoring, electrical work, agriculture tech, and small business management."
+             data-kn="ಹೊಲಿಗೆ, ವಿದ್ಯುತ್ ಕೆಲಸ, ಕೃಷಿ ತಂತ್ರಜ್ಞಾನ, ಮತ್ತು ಸಣ್ಣ ವ್ಯಾಪಾರ ನಿರ್ವಹಣೆಯಂತಹ ವ್ಯಾಪಾರಗಳಲ್ಲಿ ಪ್ರಾಯೋಗಿಕ ತರಬೇತಿ.">
+            Hands-on training in trades like tailoring, electrical work, agriculture tech, and small business management.
+          </p>
+        </div>
+        <div class="program-card">
+          <div class="card-icon">📋</div>
+          <h3 data-en="Government Scheme Guidance" data-kn="ಸರ್ಕಾರಿ ಯೋಜನೆ ಮಾರ್ಗದರ್ಶನ">Government Scheme Guidance</h3>
+          <p data-en="Helping youth navigate and access government employment programs, scholarships, and welfare schemes they're entitled to."
+             data-kn="ಯುವಕರಿಗೆ ಅವರು ಅರ್ಹವಾಗಿರುವ ಸರ್ಕಾರಿ ಉದ್ಯೋಗ ಕಾರ್ಯಕ್ರಮಗಳು, ವಿದ್ಯಾರ್ಥಿವೇತನಗಳು, ಮತ್ತು ಕಲ್ಯಾಣ ಯೋಜನೆಗಳನ್ನು ನ್ಯಾವಿಗೇಟ್ ಮಾಡಲು ಮತ್ತು ಪ್ರವೇಶಿಸಲು ಸಹಾಯ ಮಾಡುವುದು.">
+            Helping youth navigate and access government employment programs, scholarships, and welfare schemes they're entitled to.
+          </p>
+        </div>
+        <div class="program-card">
+          <div class="card-icon">🤝</div>
+          <h3 data-en="Mentorship & Placement" data-kn="ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ನಿಯೋಜನೆ">Mentorship & Placement</h3>
+          <p data-en="One-on-one mentoring, career counseling, resume building, and direct connections to local and regional employers."
+             data-kn="ಒಬ್ಬರಿಗೊಬ್ಬರು ಮಾರ್ಗದರ್ಶನ, ವೃತ್ತಿ ಸಲಹೆ, ರೆಸ್ಯೂಮ್ ನಿರ್ಮಾಣ, ಮತ್ತು ಸ್ಥಳೀಯ ಮತ್ತು ಪ್ರಾದೇಶಿಕ ಉದ್ಯೋಗದಾತರೊಂದಿಗೆ ನೇರ ಸಂಪರ್ಕಗಳು.">
+            One-on-one mentoring, career counseling, resume building, and direct connections to local and regional employers.
+          </p>
+        </div>
+        <div class="program-card">
+          <div class="card-icon">👩‍💼</div>
+          <h3 data-en="Women's Empowerment" data-kn="ಮಹಿಳಾ ಸಬಲೀಕರಣ">Women's Empowerment</h3>
+          <p data-en="Dedicated programs for young women — self-help groups, financial literacy, and entrepreneurship bootcamps."
+             data-kn="ಯುವತಿಯರಿಗೆ ಮೀಸಲಾದ ಕಾರ್ಯಕ್ರಮಗಳು — ಸ್ವ-ಸಹಾಯ ಗುಂಪುಗಳು, ಆರ್ಥಿಕ ಸಾಕ್ಷರತೆ, ಮತ್ತು ಉದ್ಯಮಶೀಲತೆ ಬೂಟ್‌ಕ್ಯಾಂಪ್‌ಗಳು.">
+            Dedicated programs for young women — self-help groups, financial literacy, and entrepreneurship bootcamps.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ GALLERY ══════ -->
+  <section id="gallery">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>
+          <span data-en="Gallery" data-kn="ಗ್ಯಾಲರಿ">Gallery</span>
+          <button class="tts-btn" data-section="gallery" aria-label="Read gallery section aloud" title="Listen">🔊</button>
+        </h2>
+        <div class="section-line"></div>
+        <div class="tts-warning" data-section="gallery"></div>
+        <p data-en="Moments from our programs and events."
+           data-kn="ನಮ್ಮ ಕಾರ್ಯಕ್ರಮಗಳು ಮತ್ತು ಕಾರ್ಯಕ್ರಮಗಳ ಕ್ಷಣಗಳು.">
+          Moments from our programs and events.
+        </p>
+      </div>
+      <div class="gallery-grid" id="gallery-grid"></div>
+    </div>
+  </section>
+
+  <!-- ══════ PODCAST ══════ -->
+  <section id="podcast">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>
+          <span data-en="Podcast" data-kn="ಪಾಡ್‌ಕಾಸ್ಟ್">Podcast</span>
+          <button class="tts-btn" data-section="podcast" aria-label="Read podcast section aloud" title="Listen">🔊</button>
+        </h2>
+        <div class="section-line"></div>
+        <div class="tts-warning" data-section="podcast"></div>
+        <p data-en="Listen to conversations about youth empowerment and community stories."
+           data-kn="ಯುವ ಸಬಲೀಕರಣ ಮತ್ತು ಸಮುದಾಯ ಕಥೆಗಳ ಬಗ್ಗೆ ಸಂಭಾಷಣೆಗಳನ್ನು ಆಲಿಸಿ.">
+          Listen to conversations about youth empowerment and community stories.
+        </p>
+      </div>
+      <div class="podcast-list" id="podcast-list"></div>
+    </div>
+  </section>
+
+  <!-- ══════ VIDEOS ══════ -->
+  <section id="videos">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>
+          <span data-en="Videos" data-kn="ವಿಡಿಯೋಗಳು">Videos</span>
+          <button class="tts-btn" data-section="videos" aria-label="Read videos section aloud" title="Listen">🔊</button>
+        </h2>
+        <div class="section-line"></div>
+        <div class="tts-warning" data-section="videos"></div>
+        <p data-en="Watch our latest activities and events."
+           data-kn="ನಮ್ಮ ಇತ್ತೀಚಿನ ಚಟುವಟಿಕೆಗಳು ಮತ್ತು ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ವೀಕ್ಷಿಸಿ.">
+          Watch our latest activities and events.
+        </p>
+      </div>
+      <div class="videos-grid" id="videos-grid"></div>
+    </div>
+  </section>
+
+  <!-- ══════ IMPACT ══════ -->
+  <section id="impact">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>
+          <span data-en="Our Impact" data-kn="ನಮ್ಮ ಪರಿಣಾಮ">Our Impact</span>
+          <button class="tts-btn" data-section="impact" aria-label="Read impact section aloud" title="Listen">🔊</button>
+        </h2>
+        <div class="section-line"></div>
+        <div class="tts-warning" data-section="impact"></div>
+        <p data-en="Measurable change in the lives of Kudachi's youth."
+           data-kn="ಕುದಚಿಯ ಯುವಕರ ಜೀವನದಲ್ಲಿ ಅಳೆಯಬಹುದಾದ ಬದಲಾವಣೆ.">
+          Measurable change in the lives of Kudachi's youth.
+        </p>
+      </div>
+
+      <div class="impact-stats">
+        <div class="stat-card">
+          <div class="stat-number" data-target="500" data-suffix="+">0</div>
+          <div class="stat-label" data-en="Youth Trained" data-kn="ತರಬೇತಿ ಪಡೆದ ಯುವಕರು">Youth Trained</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="12">0</div>
+          <div class="stat-label" data-en="Active Programs" data-kn="ಸಕ್ರಿಯ ಕಾರ್ಯಕ್ರಮಗಳು">Active Programs</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="85" data-suffix="%">0</div>
+          <div class="stat-label" data-en="Placement Rate" data-kn="ನಿಯೋಜನೆ ದರ">Placement Rate</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-target="25">0</div>
+          <div class="stat-label" data-en="Villages Reached" data-kn="ತಲುಪಿದ ಹಳ್ಳಿಗಳು">Villages Reached</div>
+        </div>
+      </div>
+
+      <div class="impact-bars">
+        <div class="impact-bar-item">
+          <div class="impact-bar-label">
+            <span data-en="Digital Literacy Adoption" data-kn="ಡಿಜಿಟಲ್ ಸಾಕ್ಷರತೆ ಅಳವಡಿಕೆ">Digital Literacy Adoption</span>
+            <span>78%</span>
+          </div>
+          <div class="impact-bar-track">
+            <div class="impact-bar-fill" data-width="78"></div>
+          </div>
+        </div>
+        <div class="impact-bar-item">
+          <div class="impact-bar-label">
+            <span data-en="Employment After Training" data-kn="ತರಬೇತಿ ನಂತರ ಉದ್ಯೋಗ">Employment After Training</span>
+            <span>85%</span>
+          </div>
+          <div class="impact-bar-track">
+            <div class="impact-bar-fill" data-width="85"></div>
+          </div>
+        </div>
+        <div class="impact-bar-item">
+          <div class="impact-bar-label">
+            <span data-en="Women Participants" data-kn="ಮಹಿಳಾ ಭಾಗವಹಿಸುವವರು">Women Participants</span>
+            <span>42%</span>
+          </div>
+          <div class="impact-bar-track">
+            <div class="impact-bar-fill" data-width="42"></div>
+          </div>
+        </div>
+        <div class="impact-bar-item">
+          <div class="impact-bar-label">
+            <span data-en="Government Scheme Access" data-kn="ಸರ್ಕಾರಿ ಯೋಜನೆ ಪ್ರವೇಶ">Government Scheme Access</span>
+            <span>65%</span>
+          </div>
+          <div class="impact-bar-track">
+            <div class="impact-bar-fill" data-width="65"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ SOCIAL IMPACT (STORIES) ══════ -->
+  <section id="stories">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>
+          <span data-en="Social Impact" data-kn="ಸಾಮಾಜಿಕ ಪ್ರಭಾವ">Social Impact</span>
+          <button class="tts-btn" data-section="stories" aria-label="Read stories section aloud" title="Listen">🔊</button>
+        </h2>
+        <div class="section-line"></div>
+        <div class="tts-warning" data-section="stories"></div>
+        <p data-en="Real stories of transformation from our community."
+           data-kn="ನಮ್ಮ ಸಮುದಾಯದಿಂದ ನಿಜವಾದ ಪರಿವರ್ತನೆಯ ಕಥೆಗಳು.">
+          Real stories of transformation from our community.
+        </p>
+      </div>
+      <div class="stories-carousel" id="stories-carousel"></div>
+    </div>
+  </section>
+
+  <!-- ══════ PRESS & MEDIA ══════ -->
+  <section id="press">
+    <div class="section-container">
+      <div class="section-header">
+        <h2>
+          <span data-en="Press & Media" data-kn="ಪತ್ರಿಕಾ ಮಾಧ್ಯಮ">Press & Media</span>
+        </h2>
+        <div class="section-line"></div>
+        <p data-en="KIRAN Foundation in the news." data-kn="ಸುದ್ದಿಯಲ್ಲಿ ಕಿರಣ ಫೌಂಡೇಶನ್.">KIRAN Foundation in the news.</p>
+      </div>
+      <div class="press-actions">
+        <a href="assets/press/press-note.pdf" class="btn btn-outline press-download-btn" id="press-download" target="_blank"
+           data-en="Download Latest Press Note (PDF)" data-kn="ಇತ್ತೀಚಿನ ಪತ್ರಿಕಾ ಟಿಪ್ಪಣಿ ಡೌನ್‌ಲೋಡ್ ಮಾಡಿ (PDF)">
+          Download Latest Press Note (PDF)
+        </a>
+      </div>
+      <div class="press-list" id="press-list"></div>
+    </div>
+  </section>
+
+  <!-- ══════ REGISTER CTA ══════ -->
+  <section id="register">
+    <div class="section-container">
+      <div class="register-box">
+        <h2>
+          <span data-en="Join KIRAN Today" data-kn="ಇಂದೇ ಕಿರಣ ಸೇರಿ">Join KIRAN Today</span>
+          <button class="tts-btn" data-section="register" aria-label="Read register section aloud" title="Listen">🔊</button>
+        </h2>
+        <div class="tts-warning" data-section="register"></div>
+        <p data-en="Are you a young person aged 16–30 in the Kudachi-Raibag area? Register now and take your first step towards skill development, career guidance, and a brighter future."
+           data-kn="ನೀವು ಕುದಚಿ-ರಾಯಬಾಗ ಪ್ರದೇಶದಲ್ಲಿ 16-30 ವಯಸ್ಸಿನ ಯುವಕರೇ? ಈಗಲೇ ನೋಂದಾಯಿಸಿ ಮತ್ತು ಕೌಶಲ್ಯ ಅಭಿವೃದ್ಧಿ, ವೃತ್ತಿ ಮಾರ್ಗದರ್ಶನ, ಮತ್ತು ಉಜ್ವಲ ಭವಿಷ್ಯದ ಕಡೆಗೆ ನಿಮ್ಮ ಮೊದಲ ಹೆಜ್ಜೆ ಇಡಿ.">
+          Are you a young person aged 16–30 in the Kudachi-Raibag area? Register now and take your first step towards skill development, career guidance, and a brighter future.
+        </p>
+        <button class="btn btn-primary" data-open-modal="registration" data-en="Register as Youth ✦" data-kn="ಯುವಕರಾಗಿ ನೋಂದಣಿ ✦">Register as Youth ✦</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ CONTACT ══════ -->
+  <section id="contact">
+    <div class="section-container">
+      <div class="section-header">
+        <h2><span data-en="Contact Us" data-kn="ನಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸಿ">Contact Us</span></h2>
+        <div class="section-line"></div>
+        <p data-en="Reach out to learn more or get involved." data-kn="ಇನ್ನಷ್ಟು ತಿಳಿಯಲು ಅಥವಾ ಒಳಗೊಳ್ಳಲು ಸಂಪರ್ಕಿಸಿ.">Reach out to learn more or get involved.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="ci-icon">📍</div>
+            <div>
+              <h4 data-en="Location" data-kn="ಸ್ಥಳ">Location</h4>
+              <p data-en="Kudachi, Raibag Taluk, Belagavi District, Karnataka 591214" data-kn="ಕುದಚಿ, ರಾಯಬಾಗ ತಾಲ್ಲೂಕು, ಬೆಳಗಾವಿ ಜಿಲ್ಲೆ, ಕರ್ನಾಟಕ 591214">Kudachi, Raibag Taluk, Belagavi District, Karnataka 591214</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">📧</div>
+            <div>
+              <h4 data-en="Email" data-kn="ಇಮೇಲ್">Email</h4>
+              <p>kiran.foundation.kudachi@gmail.com</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">📞</div>
+            <div>
+              <h4 data-en="Phone" data-kn="ಫೋನ್">Phone</h4>
+              <p>+91 XXXXX XXXXX</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="ci-icon">🕐</div>
+            <div>
+              <h4 data-en="Office Hours" data-kn="ಕಚೇರಿ ಸಮಯ">Office Hours</h4>
+              <p data-en="Mon – Sat: 9:00 AM – 6:00 PM" data-kn="ಸೋಮ – ಶನಿ: ಬೆಳಿಗ್ಗೆ 9:00 – ಸಂಜೆ 6:00">Mon – Sat: 9:00 AM – 6:00 PM</p>
+            </div>
+          </div>
+        </div>
+        <div class="contact-map">
+          <p data-en="📍 Map: Kudachi, Karnataka" data-kn="📍 ನಕ್ಷೆ: ಕುದಚಿ, ಕರ್ನಾಟಕ">📍 Map: Kudachi, Karnataka</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ FOOTER ══════ -->
+  <footer class="footer">
+    <div class="footer-social">
+      <!-- TODO: replace with real link -->
+      <a href="#" aria-label="Facebook" class="social-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <!-- TODO: replace with real link -->
+      <a href="#" aria-label="Instagram" class="social-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <!-- TODO: replace with real link -->
+      <a href="#" aria-label="X (Twitter)" class="social-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <!-- TODO: replace with real link -->
+      <a href="#" aria-label="YouTube" class="social-icon">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+    </div>
+    <div class="footer-links">
+      <a href="#" data-open-modal="volunteer" data-en="Join Us as Volunteer" data-kn="ಸ್ವಯಂಸೇವಕರಾಗಿ ನಮ್ಮೊಂದಿಗೆ ಸೇರಿ">Join Us as Volunteer</a>
+    </div>
+    <p>
+      <span data-en="© 2026 KIRAN Foundation, Kudachi. Built with" data-kn="© 2026 ಕಿರಣ ಫೌಂಡೇಶನ್, ಕುದಚಿ. ನಿರ್ಮಿಸಲಾಗಿದೆ">© 2026 KIRAN Foundation, Kudachi. Built with</span>
+      <span class="footer-heart">♥</span>
+      <span data-en="for our community." data-kn="ನಮ್ಮ ಸಮುದಾಯಕ್ಕಾಗಿ.">for our community.</span>
+    </p>
+  </footer>
+
+  <!-- ══════ REGISTRATION MODAL ══════ -->
+  <div class="modal-overlay" id="registration-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-registration">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modal-title-registration" data-en="Youth Registration Form" data-kn="ಯುವ ನೋಂದಣಿ ಫಾರ್ಮ್">Youth Registration Form</h3>
+        <button class="modal-close" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <p data-en="Fill out the form below to register for KIRAN Foundation's skill development programs. We'll contact you with next steps."
+           data-kn="ಕಿರಣ ಫೌಂಡೇಶನ್‌ನ ಕೌಶಲ್ಯ ಅಭಿವೃದ್ಧಿ ಕಾರ್ಯಕ್ರಮಗಳಿಗೆ ನೋಂದಾಯಿಸಲು ಕೆಳಗಿನ ಫಾರ್ಮ್ ಅನ್ನು ಭರ್ತಿ ಮಾಡಿ. ಮುಂದಿನ ಹಂತಗಳೊಂದಿಗೆ ನಾವು ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತೇವೆ.">
+          Fill out the form below to register for KIRAN Foundation's skill development programs. We'll contact you with next steps.
+        </p>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSf8irLXghkrP7MKbmhwi3PSSphB7d1MoNzMHJgJM9YqG8877Q/viewform?embedded=true"
+                title="KIRAN Foundation Registration Form"
+                loading="lazy">
+          Loading form...
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ JOIN US / VOLUNTEER MODAL ══════ -->
+  <div class="modal-overlay" id="volunteer-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-volunteer">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modal-title-volunteer" data-en="Join Us" data-kn="ನಮ್ಮೊಂದಿಗೆ ಸೇರಿ">Join Us</h3>
+        <button class="modal-close" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <p data-en="Interested in volunteering or collaborating with KIRAN Foundation? Leave your details below and we will reach out to you."
+           data-kn="ಕಿರಣ ಫೌಂಡೇಶನ್‌ನೊಂದಿಗೆ ಸ್ವಯಂಸೇವಕರಾಗಲು ಅಥವಾ ಸಹಕರಿಸಲು ಆಸಕ್ತಿಯಿದೆಯೇ? ಕೆಳಗೆ ನಿಮ್ಮ ವಿವರಗಳನ್ನು ಬಿಡಿ, ನಾವು ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತೇವೆ.">
+          Interested in volunteering or collaborating with KIRAN Foundation? Leave your details below and we will reach out to you.
+        </p>
+        <form id="join-us-form" class="join-form" novalidate>
+          <div class="form-group">
+            <label for="join-name" data-en="Your Name" data-kn="ನಿಮ್ಮ ಹೆಸರು">Your Name</label>
+            <input type="text" id="join-name" name="name" required autocomplete="name"
+                   data-placeholder-en="Enter your full name" data-placeholder-kn="ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರನ್ನು ನಮೂದಿಸಿ"
+                   placeholder="Enter your full name">
+          </div>
+          <div class="form-group">
+            <label for="join-phone" data-en="Phone Number" data-kn="ಫೋನ್ ಸಂಖ್ಯೆ">Phone Number</label>
+            <input type="tel" id="join-phone" name="phone" required autocomplete="tel"
+                   data-placeholder-en="e.g. 9876543210" data-placeholder-kn="ಉದಾ. 9876543210"
+                   placeholder="e.g. 9876543210">
+          </div>
+          <div class="form-group">
+            <label for="join-email" data-en="Email (optional)" data-kn="ಇಮೇಲ್ (ಐಚ್ಛಿಕ)">Email (optional)</label>
+            <input type="email" id="join-email" name="email" autocomplete="email"
+                   data-placeholder-en="your@email.com" data-placeholder-kn="your@email.com"
+                   placeholder="your@email.com">
+          </div>
+          <button type="submit" class="btn btn-primary join-submit-btn"
+                  data-en="Submit ✦" data-kn="ಸಲ್ಲಿಸಿ ✦">Submit ✦</button>
+          <div class="join-form-status" id="join-form-status"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ VIDEO MODAL ══════ -->
+  <div class="modal-overlay" id="video-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-video">
+    <div class="modal modal-video">
+      <div class="modal-header">
+        <h3 id="modal-title-video">Video</h3>
+        <button class="modal-close" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="video-embed-container" id="video-embed-container"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ LIGHTBOX ══════ -->
+  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" aria-label="Close lightbox">✕</button>
+    <button class="lightbox-prev" aria-label="Previous image">‹</button>
+    <button class="lightbox-next" aria-label="Next image">›</button>
+    <div class="lightbox-content">
+      <img class="lightbox-img" id="lightbox-img" src="" alt="">
+      <p class="lightbox-caption" id="lightbox-caption"></p>
+    </div>
+  </div>
+
+  <!-- ══════ NEED HELP? FAB ══════ -->
+  <!-- TODO: replace PASTE_PHONE_NUMBER_HERE with real WhatsApp number (digits only, with country code, e.g. 919876543210) -->
+  <a href="https://wa.me/PASTE_PHONE_NUMBER_HERE" target="_blank" rel="noopener noreferrer"
+     class="fab-help" id="fab-help" aria-label="Need Help? Contact us on WhatsApp">
+    <span class="fab-icon">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </span>
+    <span class="fab-label" data-en="Need Help?" data-kn="ಸಹಾಯ ಬೇಕೆ?">Need Help?</span>
+  </a>
+
+  <script src="script.js"></script>
+</body>
+</html>

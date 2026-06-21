@@ -7,6 +7,7 @@
   <meta name="description" content="KIRAN Foundation empowers rural youth in Kudachi, Belagavi District through skill development, vocational training, and employment support.">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☀️</text></svg>">
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body data-lang="en">
 
@@ -536,7 +537,8 @@
            data-kn="ಕಿರಣ ಫೌಂಡೇಶನ್‌ನೊಂದಿಗೆ ಸ್ವಯಂಸೇವಕರಾಗಲು ಅಥವಾ ಸಹಕರಿಸಲು ಆಸಕ್ತಿಯಿದೆಯೇ? ಕೆಳಗೆ ನಿಮ್ಮ ವಿವರಗಳನ್ನು ಬಿಡಿ, ನಾವು ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತೇವೆ.">
           Interested in volunteering or collaborating with KIRAN Foundation? Leave your details below and we will reach out to you.
         </p>
-        <form id="join-us-form" class="join-form" novalidate>
+        <form id="join-us-form" class="join-form" name="join-us" data-netlify="true" novalidate>
+          <input type="hidden" name="form-name" value="join-us">
           <div class="form-group">
             <label for="join-name" data-en="Your Name" data-kn="ನಿಮ್ಮ ಹೆಸರು">Your Name</label>
             <input type="text" id="join-name" name="name" required autocomplete="name"
@@ -598,5 +600,16 @@
   </a>
 
   <script src="script.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function(user) {
+        if (!user) {
+          window.netlifyIdentity.on("login", function() {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
 </body>
 </html>

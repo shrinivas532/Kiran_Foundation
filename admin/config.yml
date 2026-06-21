@@ -1,0 +1,98 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+collections:
+  - name: "content"
+    label: "Site Content"
+    editor:
+      preview: false
+    files:
+
+      - name: "gallery"
+        label: "Gallery Photos"
+        file: "content/gallery.json"
+        format: "json"
+        fields:
+          - name: "items"
+            label: "Photos"
+            label_singular: "Photo"
+            widget: "list"
+            summary: "{{fields.caption_en}}"
+            fields:
+              - { name: "image", label: "Photo", widget: "image", required: true }
+              - { name: "caption_en", label: "Caption (English)", widget: "string" }
+              - { name: "caption_kn", label: "Caption (ಕನ್ನಡ)", widget: "string" }
+              - { name: "date", label: "Date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+
+      - name: "videos"
+        label: "YouTube Videos"
+        file: "content/videos.json"
+        format: "json"
+        fields:
+          - name: "items"
+            label: "Videos"
+            label_singular: "Video"
+            widget: "list"
+            summary: "{{fields.title_en}}"
+            fields:
+              - { name: "youtube_id", label: "YouTube Video ID", widget: "string", hint: "The part after v= in the YouTube URL. Example: if URL is youtube.com/watch?v=dQw4w9WgXcQ then enter dQw4w9WgXcQ" }
+              - { name: "title_en", label: "Title (English)", widget: "string" }
+              - { name: "title_kn", label: "Title (ಕನ್ನಡ)", widget: "string" }
+              - { name: "description_en", label: "Description (English)", widget: "text" }
+              - { name: "description_kn", label: "Description (ಕನ್ನಡ)", widget: "text" }
+
+      - name: "podcasts"
+        label: "Podcast Episodes"
+        file: "content/podcasts.json"
+        format: "json"
+        fields:
+          - name: "items"
+            label: "Episodes"
+            label_singular: "Episode"
+            widget: "list"
+            summary: "{{fields.title_en}} — {{fields.date}}"
+            fields:
+              - { name: "title_en", label: "Title (English)", widget: "string" }
+              - { name: "title_kn", label: "Title (ಕನ್ನಡ)", widget: "string" }
+              - { name: "description_en", label: "Description (English)", widget: "text" }
+              - { name: "description_kn", label: "Description (ಕನ್ನಡ)", widget: "text" }
+              - { name: "listen_url", label: "Listen URL", widget: "string", hint: "Link to episode on Spotify, YouTube, Google Podcasts, etc." }
+              - { name: "date", label: "Date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+
+      - name: "press"
+        label: "Press Releases"
+        file: "content/press.json"
+        format: "json"
+        fields:
+          - name: "items"
+            label: "Press Items"
+            label_singular: "Press Item"
+            widget: "list"
+            summary: "{{fields.headline_en}} — {{fields.outlet_name}}"
+            fields:
+              - { name: "outlet_name", label: "News Outlet Name", widget: "string" }
+              - { name: "headline_en", label: "Headline (English)", widget: "string" }
+              - { name: "headline_kn", label: "Headline (ಕನ್ನಡ)", widget: "string" }
+              - { name: "date", label: "Date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+              - { name: "article_url", label: "Article URL", widget: "string", required: false, hint: "Link to the online article" }
+              - { name: "pdf", label: "Press Note PDF", widget: "file", required: false, hint: "Upload the press release PDF" }
+
+      - name: "settings"
+        label: "Site Settings"
+        file: "content/settings.json"
+        format: "json"
+        fields:
+          - { name: "logo", label: "Site Logo", widget: "image", required: false, hint: "Upload your organization logo (PNG or SVG recommended)" }
+          - { name: "site_title_en", label: "Site Title (English)", widget: "string" }
+          - { name: "site_title_kn", label: "Site Title (ಕನ್ನಡ)", widget: "string" }
+          - { name: "contact_phone", label: "Contact Phone", widget: "string" }
+          - { name: "contact_email", label: "Contact Email", widget: "string" }
+          - { name: "whatsapp_number", label: "WhatsApp Number", widget: "string", hint: "Digits only with country code, e.g. 919876543210" }
+          - { name: "facebook_url", label: "Facebook URL", widget: "string", required: false }
+          - { name: "instagram_url", label: "Instagram URL", widget: "string", required: false }
+          - { name: "twitter_url", label: "X / Twitter URL", widget: "string", required: false }
+          - { name: "youtube_url", label: "YouTube URL", widget: "string", required: false }

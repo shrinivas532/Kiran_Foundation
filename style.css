@@ -220,6 +220,20 @@ a:hover { color: var(--sun-gold); }
 
 .lang-btn[data-lang="kn"] { font-family: var(--font-kannada); }
 
+/* ── Mobile nav-right (lang toggle + hamburger) ── */
+.nav-right-mobile {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lang-toggle-mobile { display: flex; }
+
+@media (min-width: 1024px) {
+  .nav-right-mobile { display: none; }
+  .lang-toggle-mobile { display: none; }
+}
+
 /* ── Hamburger — visible below 1024px ── */
 .hamburger {
   display: flex;
@@ -259,9 +273,9 @@ a:hover { color: var(--sun-gold); }
   z-index: 999;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding: 20px var(--gutter);
-  gap: 4px;
+  justify-content: center;
+  padding: 12px var(--gutter);
+  gap: 2px;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
@@ -274,15 +288,15 @@ a:hover { color: var(--sun-gold); }
 
 .mobile-menu a {
   color: var(--text-light);
-  font-size: clamp(1rem, 2.5vw, 1.15rem);
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
   font-weight: 600;
-  padding: 12px 24px;
+  padding: 10px 20px;
   border-radius: 8px;
   transition: background 0.2s;
   width: 100%;
-  max-width: 400px;
+  max-width: 320px;
   text-align: center;
-  min-height: 48px;
+  min-height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -295,11 +309,7 @@ a:hover { color: var(--sun-gold); }
 }
 
 .mobile-lang-toggle {
-  display: flex;
-  margin-top: 12px;
-  background: rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  border: 1px solid rgba(247, 147, 30, 0.2);
+  display: none;
 }
 
 
@@ -1413,7 +1423,7 @@ section {
   background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(4px);
   z-index: 2000;
-  align-items: flex-start;
+  align-items: stretch;
   justify-content: center;
   padding: 0;
   overflow-y: auto;
@@ -1424,7 +1434,7 @@ section {
 
 .modal {
   background: var(--sky-mid);
-  border: 1px solid var(--card-border);
+  border: none;
   border-radius: 0;
   width: 100%;
   min-height: 100vh;
@@ -1432,7 +1442,6 @@ section {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
 }
 
 @media (min-width: 768px) {
@@ -1442,10 +1451,12 @@ section {
   }
 
   .modal {
+    border: 1px solid var(--card-border);
     border-radius: 16px;
     max-width: 680px;
     min-height: auto;
     max-height: 90vh;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   }
 
   .modal-video {
@@ -1483,22 +1494,26 @@ section {
 .modal-close:hover { background: rgba(255, 255, 255, 0.2); }
 
 .modal-body {
-  padding: clamp(12px, 2vw, 18px) clamp(16px, 3vw, 24px) clamp(16px, 3vw, 28px);
+  padding: clamp(8px, 2vw, 18px) clamp(12px, 3vw, 24px) clamp(12px, 3vw, 28px);
   overflow-y: auto;
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .modal-body p {
   color: rgba(255, 255, 255, 0.7);
   font-size: clamp(0.85rem, 0.7vw + 0.3rem, 0.95rem);
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  flex-shrink: 0;
 }
 
 .modal-body iframe {
   width: 100%;
-  min-height: clamp(400px, 60vh, 600px);
+  flex: 1;
+  min-height: 0;
   border: none;
-  border-radius: 8px;
+  border-radius: 4px;
   background: #fff;
 }
 

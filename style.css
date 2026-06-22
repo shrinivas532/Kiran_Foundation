@@ -1072,6 +1072,16 @@ section {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.impact-empty {
+  text-align: center;
+  padding: clamp(32px, 5vw, 56px);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: clamp(0.92rem, 1vw + 0.3rem, 1.05rem);
+}
+
 .impact-bars {
   width: 100%;
   max-width: 700px;

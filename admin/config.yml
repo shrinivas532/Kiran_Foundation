@@ -63,6 +63,33 @@ collections:
               - { name: "listen_url", label: "Listen URL", widget: "string", hint: "Link to episode on Spotify, YouTube, Google Podcasts, etc." }
               - { name: "date", label: "Date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
 
+      - name: "impact"
+        label: "Our Impact"
+        file: "content/impact.json"
+        format: "json"
+        fields:
+          - name: "stats"
+            label: "Impact Numbers"
+            label_singular: "Stat"
+            widget: "list"
+            summary: "{{fields.label_en}}: {{fields.value}}{{fields.suffix}}"
+            hint: "Big numbers shown at the top (e.g. 500+ Youth Trained)"
+            fields:
+              - { name: "value", label: "Number", widget: "number", value_type: "int", hint: "e.g. 500" }
+              - { name: "suffix", label: "Suffix", widget: "string", required: false, hint: "e.g. + or %" }
+              - { name: "label_en", label: "Label (English)", widget: "string", hint: "e.g. Youth Trained" }
+              - { name: "label_kn", label: "Label (ಕನ್ನಡ)", widget: "string", hint: "e.g. ತರಬೇತಿ ಪಡೆದ ಯುವಕರು" }
+          - name: "bars"
+            label: "Progress Bars"
+            label_singular: "Bar"
+            widget: "list"
+            summary: "{{fields.label_en}}: {{fields.percent}}%"
+            hint: "Percentage bars shown below the numbers"
+            fields:
+              - { name: "label_en", label: "Label (English)", widget: "string", hint: "e.g. Employment After Training" }
+              - { name: "label_kn", label: "Label (ಕನ್ನಡ)", widget: "string" }
+              - { name: "percent", label: "Percentage", widget: "number", value_type: "int", min: 0, max: 100 }
+
       - name: "press"
         label: "Press Releases"
         file: "content/press.json"

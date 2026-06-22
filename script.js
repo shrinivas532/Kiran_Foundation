@@ -270,12 +270,15 @@
   // RENDER FUNCTIONS
   // ════════════════════════════════════════
 
+  var impactData = { stats: [], bars: [] };
+
   function renderAll() {
     renderGallery();
     renderPodcast();
     renderVideos();
     renderStories();
     renderPress();
+    renderImpact();
   }
 
   // ── Gallery ──
@@ -492,6 +495,51 @@
     pressList.innerHTML = html;
   }
 
+  // ── Impact (CMS-driven) ──
+
+  function renderImpact() {
+    var lang = getCurrentLang();
+    var statsEl = document.getElementById('impact-stats');
+    var barsEl = document.getElementById('impact-bars');
+    var emptyEl = document.getElementById('impact-empty');
+
+    if ((!impactData.stats || impactData.stats.length === 0) &&
+        (!impactData.bars || impactData.bars.length === 0)) {
+      statsEl.innerHTML = '';
+      barsEl.innerHTML = '';
+      emptyEl.style.display = 'block';
+      emptyEl.querySelector('p').textContent = lang === 'kn'
+        ? 'ಪರಿಣಾಮ ಡೇಟಾ ಶೀಘ್ರದಲ್ಲೇ ಬರಲಿದೆ — ನಾವು ಈಗಷ್ಟೇ ಪ್ರಾರಂಭಿಸಿದ್ದೇವೆ!'
+        : 'Impact data coming soon — we\'re just getting started!';
+      return;
+    }
+
+    emptyEl.style.display = 'none';
+
+    var statsHtml = '';
+    if (impactData.stats && impactData.stats.length > 0) {
+      impactData.stats.forEach(function (s) {
+        var label = lang === 'kn' ? s.label_kn : s.label_en;
+        var suffix = s.suffix || '';
+        statsHtml += '<div class="stat-card">' +
+          '<div class="stat-number" data-target="' + s.value + '" data-suffix="' + suffix + '">0</div>' +
+          '<div class="stat-label">' + label + '</div></div>';
+      });
+    }
+    statsEl.innerHTML = statsHtml;
+
+    var barsHtml = '';
+    if (impactData.bars && impactData.bars.length > 0) {
+      impactData.bars.forEach(function (b) {
+        var label = lang === 'kn' ? b.label_kn : b.label_en;
+        barsHtml += '<div class="impact-bar-item"><div class="impact-bar-label">' +
+          '<span>' + label + '</span><span>' + b.percent + '%</span></div>' +
+          '<div class="impact-bar-track"><div class="impact-bar-fill" data-width="' + b.percent + '"></div></div></div>';
+      });
+    }
+    barsEl.innerHTML = barsHtml;
+  }
+
   // ── Press download button ──
 
   var pressDownload = document.getElementById('press-download');
@@ -587,13 +635,15 @@
       fetchJSON('/content/videos.json'),
       fetchJSON('/content/podcasts.json'),
       fetchJSON('/content/press.json'),
-      fetchJSON('/content/settings.json')
+      fetchJSON('/content/settings.json'),
+      fetchJSON('/content/impact.json')
     ]).then(function (results) {
       if (results[0] && results[0].items) galleryItems = results[0].items;
       if (results[1] && results[1].items) videos = results[1].items;
       if (results[2] && results[2].items) podcastEpisodes = results[2].items;
       if (results[3] && results[3].items) pressItems = results[3].items;
       if (results[4]) applySettings(results[4]);
+      if (results[5]) impactData = results[5];
       renderAll();
     });
   }

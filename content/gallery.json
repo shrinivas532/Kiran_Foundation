@@ -1,10 +1,22 @@
 {
   "items": [
-    { "image": "", "caption_en": "Cricket Tournament 2026", "caption_kn": "ಕ್ರಿಕೆಟ್ ಪಂದ್ಯಾವಳಿ 2026", "date": "2026-01-01" },
-    { "image": "", "caption_en": "Digital Literacy Workshop", "caption_kn": "ಡಿಜಿಟಲ್ ಸಾಕ್ಷರತೆ ಕಾರ್ಯಾಗಾರ", "date": "2026-02-01" },
-    { "image": "", "caption_en": "Women Empowerment Camp", "caption_kn": "ಮಹಿಳಾ ಸಬಲೀಕರಣ ಶಿಬಿರ", "date": "2026-03-01" },
-    { "image": "", "caption_en": "Job Fair 2026", "caption_kn": "ಉದ್ಯೋಗ ಮೇಳ 2026", "date": "2026-04-01" },
-    { "image": "", "caption_en": "Vocational Training Session", "caption_kn": "ವೃತ್ತಿಪರ ತರಬೇತಿ ಅಧಿವೇಶನ", "date": "2026-05-01" },
-    { "image": "", "caption_en": "Community Outreach", "caption_kn": "ಸಮುದಾಯ ಸಂಪರ್ಕ", "date": "2026-06-01" }
+    {
+      "image": "/assets/uploads/whatsapp-image-2026-06-21-at-3.39.13-pm.jpeg",
+      "caption_en": "Community Outreach",
+      "caption_kn": "ಸಮುದಾಯ ಸಂಪರ್ಕ",
+      "date": "2026-06-21"
+    },
+    {
+      "image": "/assets/uploads/whatsapp-image-2026-06-21-at-1.45.53-pm.jpeg",
+      "caption_kn": "ಸಮುದಾಯ ಸಂಪರ್ಕ",
+      "caption_en": "Community Outreach",
+      "date": "2026-06-21"
+    },
+    {
+      "image": "/assets/uploads/whatsapp-image-2026-06-21-at-1.45.52-pm.jpeg",
+      "caption_kn": "ಸಮುದಾಯ ಸಂಪರ್ಕ",
+      "caption_en": "Community Outreach",
+      "date": "2026-06-21"
+    }
   ]
 }

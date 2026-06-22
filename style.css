@@ -1447,20 +1447,21 @@ section {
 @media (min-width: 768px) {
   .modal-overlay {
     align-items: center;
-    padding: clamp(24px, 4vw, 48px);
+    padding: 24px;
   }
 
   .modal {
     border: 1px solid var(--card-border);
     border-radius: 16px;
-    max-width: 680px;
-    min-height: auto;
-    max-height: 90vh;
+    max-width: min(92vw, 900px);
+    min-height: 0;
+    height: 92vh;
+    max-height: 92vh;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
   }
 
   .modal-video {
-    max-width: min(90vw, 800px);
+    max-width: min(92vw, 900px);
   }
 }
 

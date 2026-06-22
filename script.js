@@ -47,7 +47,7 @@
   ];
 
   var pressItems = [
-    { outlet_name: 'Placeholder News Outlet', headline_en: 'KIRAN Foundation launches digital literacy drive in Kudachi', headline_kn: 'ಕಿರಣ ಫೌಂಡೇಶನ್ ಕುದಚಿಯಲ್ಲಿ ಡಿಜಿಟಲ್ ಸಾಕ್ಷರತೆ ಅಭಿಯಾನ ಪ್ರಾರಂಭಿಸಿದೆ',
+    { outlet_name: 'Placeholder News Outlet', headline_en: 'KIRAN Foundation launches digital literacy drive in Kudachi', headline_kn: 'ಕಿರಣ ಫೌಂಡೇಶನ್ ಕುಡಚಿಯಲ್ಲಿ ಡಿಜಿಟಲ್ ಸಾಕ್ಷರತೆ ಅಭಿಯಾನ ಪ್ರಾರಂಭಿಸಿದೆ',
       date: '2026-06-01', article_url: '' },
     { outlet_name: 'Placeholder News Outlet', headline_en: 'Youth employment fair draws 200+ participants in Raibag Taluk', headline_kn: 'ರಾಯಬಾಗ ತಾಲ್ಲೂಕಿನಲ್ಲಿ ಯುವ ಉದ್ಯೋಗ ಮೇಳ 200+ ಭಾಗವಹಿಸುವವರನ್ನು ಆಕರ್ಷಿಸಿದೆ',
       date: '2026-05-15', article_url: '' }

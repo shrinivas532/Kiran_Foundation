@@ -21,11 +21,23 @@ collections:
             label: "Photos"
             label_singular: "Photo"
             widget: "list"
-            summary: "{{fields.caption_en}}"
+            summary: "{{fields.caption_en}} ({{fields.category}})"
             fields:
               - { name: "image", label: "Photo", widget: "image", required: true }
               - { name: "caption_en", label: "Caption (English)", widget: "string" }
               - { name: "caption_kn", label: "Caption (ಕನ್ನಡ)", widget: "string" }
+              - name: "category"
+                label: "Category"
+                widget: "select"
+                options:
+                  - { label: "Village Visits / ಗ್ರಾಮ ಭೇಟಿ", value: "village-visits" }
+                  - { label: "Skill Camps / ಕೌಶಲ್ಯ ಶಿಬಿರ", value: "skill-camps" }
+                  - { label: "Sports & Events / ಕ್ರೀಡೆ ಮತ್ತು ಕಾರ್ಯಕ್ರಮ", value: "sports-events" }
+                  - { label: "Job Fairs / ಉದ್ಯೋಗ ಮೇಳ", value: "job-fairs" }
+                  - { label: "Community / ಸಮುದಾಯ", value: "community" }
+                  - { label: "Field Visits / ಕ್ಷೇತ್ರ ಭೇಟಿ", value: "field-visits" }
+                default: "community"
+                hint: "Pick a category for filtering on the website"
               - { name: "date", label: "Date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
 
       - name: "videos"
@@ -90,6 +102,55 @@ collections:
               - { name: "label_kn", label: "Label (ಕನ್ನಡ)", widget: "string" }
               - { name: "percent", label: "Percentage", widget: "number", value_type: "int", min: 0, max: 100 }
 
+      - name: "stories"
+        label: "Social Impact Stories"
+        file: "content/stories.json"
+        format: "json"
+        fields:
+          - name: "stories"
+            label: "Stories"
+            label_singular: "Story"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { name: "photo", label: "Person's Photo", widget: "image", required: false, hint: "Clear portrait photo. Will show large on the website." }
+              - { name: "name", label: "Person's Name", widget: "string" }
+              - { name: "location", label: "Village / Location", widget: "string", required: false, hint: "e.g. Kudachi, Nippani — shown below name" }
+              - { name: "outcome_en", label: "Outcome (English)", widget: "string", hint: "One line — e.g. Got a job in electrical maintenance" }
+              - { name: "outcome_kn", label: "Outcome (Kannada)", widget: "string" }
+              - { name: "quote_en", label: "Their Quote (English)", widget: "text", hint: "What they said about KIRAN Foundation. Use their real words with their permission." }
+              - { name: "quote_kn", label: "Their Quote (Kannada)", widget: "text" }
+
+      - name: "team"
+        label: "Founding Team"
+        file: "content/team.json"
+        format: "json"
+        fields:
+          - name: "members"
+            label: "Members"
+            label_singular: "Member"
+            widget: "list"
+            summary: "{{fields.name}} — {{fields.role_en}}"
+            fields:
+              - { name: "photo", label: "Photo", widget: "image", required: false, hint: "Upload a clear portrait photo. Square or portrait orientation works best." }
+              - { name: "name", label: "Name", widget: "string", hint: "Full name as it should appear on the website" }
+              - { name: "role_en", label: "Role (English)", widget: "string", hint: "e.g. Founder & President, Programme Director" }
+              - { name: "role_kn", label: "Role (Kannada)", widget: "string", hint: "e.g. ಸಂಸ್ಥಾಪಕ ಮತ್ತು ಅಧ್ಯಕ್ಷ" }
+              - { name: "bio_en", label: "Short Bio (English)", widget: "text", required: false, hint: "1-2 sentences. Optional." }
+              - { name: "bio_kn", label: "Short Bio (Kannada)", widget: "text", required: false }
+
+      - name: "about"
+        label: "About & Founding Story"
+        file: "content/about.json"
+        format: "json"
+        fields:
+          - { name: "founding_story_en", label: "Founding Story (English)", widget: "markdown", required: false, hint: "Tell the story of how and why KIRAN Foundation started. 2-4 paragraphs." }
+          - { name: "founding_story_kn", label: "Founding Story (Kannada)", widget: "markdown", required: false, hint: "ಕನ್ನಡದಲ್ಲಿ ಪ್ರತಿಷ್ಠಾನದ ಹಿನ್ನೆಲೆ ಬರೆಯಿರಿ." }
+          - { name: "mission_en", label: "Mission Statement (English)", widget: "string" }
+          - { name: "mission_kn", label: "Mission Statement (Kannada)", widget: "string" }
+          - { name: "core_values_en", label: "Core Values (English)", widget: "markdown", required: false, hint: "KIRAN = Knowledge, Innovation, Reform, Aspiration, Nurture. Explain each briefly." }
+          - { name: "core_values_kn", label: "Core Values (Kannada)", widget: "markdown", required: false }
+
       - name: "press"
         label: "Press Releases"
         file: "content/press.json"
@@ -139,6 +200,14 @@ collections:
           - { name: "logo", label: "Site Logo", widget: "image", required: false, hint: "Upload your organization logo (PNG or SVG recommended)" }
           - { name: "site_title_en", label: "Site Title (English)", widget: "string" }
           - { name: "site_title_kn", label: "Site Title (ಕನ್ನಡ)", widget: "string" }
+          - { name: "hero_badge_en", label: "Hero Badge Text (English)", widget: "string", required: false, default: "Kudachi, Belagavi District — Building Tomorrow" }
+          - { name: "hero_badge_kn", label: "Hero Badge Text (Kannada)", widget: "string", required: false }
+          - { name: "hero_headline_en", label: "Hero Headline (English)", widget: "string", required: false, default: "Building a self-reliant generation" }
+          - { name: "hero_headline_kn", label: "Hero Headline (Kannada)", widget: "string", required: false }
+          - { name: "hero_subtitle_en", label: "Hero Subtitle (English)", widget: "text", required: false }
+          - { name: "hero_subtitle_kn", label: "Hero Subtitle (Kannada)", widget: "text", required: false }
+          - { name: "vision_subtitle_en", label: "Vision Subtitle (English)", widget: "string", required: false }
+          - { name: "vision_subtitle_kn", label: "Vision Subtitle (Kannada)", widget: "string", required: false }
           - { name: "contact_phone", label: "Contact Phone", widget: "string" }
           - { name: "contact_email", label: "Contact Email", widget: "string" }
           - { name: "whatsapp_number", label: "WhatsApp Number", widget: "string", hint: "Digits only with country code, e.g. 919876543210" }

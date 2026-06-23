@@ -31,20 +31,10 @@
       description_en: 'Watch our youth learn essential computer and internet skills.', description_kn: 'ನಮ್ಮ ಯುವಕರು ಅಗತ್ಯ ಕಂಪ್ಯೂಟರ್ ಮತ್ತು ಇಂಟರ್ನೆಟ್ ಕೌಶಲ್ಯಗಳನ್ನು ಕಲಿಯುವುದನ್ನು ವೀಕ್ಷಿಸಿ.' }
   ];
 
-  var stories = [
-    { name: 'REPLACE WITH REAL STORY',
-      outcome_en: 'Got a job in electrical maintenance', outcome_kn: 'ವಿದ್ಯುತ್ ನಿರ್ವಹಣೆಯಲ್ಲಿ ಉದ್ಯೋಗ ಪಡೆದರು',
-      quote_en: 'KIRAN Foundation taught me skills I never thought I could learn. Today I have a stable job and can support my family.',
-      quote_kn: 'ಕಿರಣ ಫೌಂಡೇಶನ್ ನಾನು ಕಲಿಯಬಹುದೆಂದು ಎಂದೂ ಭಾವಿಸದ ಕೌಶಲ್ಯಗಳನ್ನು ಕಲಿಸಿತು. ಇಂದು ನನಗೆ ಸ್ಥಿರ ಉದ್ಯೋಗವಿದೆ ಮತ್ತು ನನ್ನ ಕುಟುಂಬವನ್ನು ಬೆಂಬಲಿಸಬಲ್ಲೆ.' },
-    { name: 'REPLACE WITH REAL STORY',
-      outcome_en: 'Started a tailoring business from home', outcome_kn: 'ಮನೆಯಿಂದ ಹೊಲಿಗೆ ವ್ಯಾಪಾರ ಪ್ರಾರಂಭಿಸಿದರು',
-      quote_en: 'The vocational training gave me the confidence to start my own business. I now employ two other women from my village.',
-      quote_kn: 'ವೃತ್ತಿಪರ ತರಬೇತಿ ನನಗೆ ಸ್ವಂತ ವ್ಯಾಪಾರ ಪ್ರಾರಂಭಿಸಲು ಆತ್ಮವಿಶ್ವಾಸ ನೀಡಿತು. ನಾನು ಈಗ ನನ್ನ ಗ್ರಾಮದ ಇತರ ಇಬ್ಬರು ಮಹಿಳೆಯರಿಗೆ ಉದ್ಯೋಗ ನೀಡಿದ್ದೇನೆ.' },
-    { name: 'REPLACE WITH REAL STORY',
-      outcome_en: 'Secured government scholarship for higher studies', outcome_kn: 'ಉನ್ನತ ಅಧ್ಯಯನಕ್ಕಾಗಿ ಸರ್ಕಾರಿ ವಿದ್ಯಾರ್ಥಿವೇತನ ಪಡೆದರು',
-      quote_en: 'I did not know these schemes existed until KIRAN helped me apply. Now I am pursuing my engineering degree without financial worry.',
-      quote_kn: 'ಕಿರಣ ನನಗೆ ಅರ್ಜಿ ಸಲ್ಲಿಸಲು ಸಹಾಯ ಮಾಡುವವರೆಗೆ ಈ ಯೋಜನೆಗಳು ಅಸ್ತಿತ್ವದಲ್ಲಿವೆ ಎಂದು ನನಗೆ ತಿಳಿದಿರಲಿಲ್ಲ. ಈಗ ನಾನು ಆರ್ಥಿಕ ಚಿಂತೆಯಿಲ್ಲದೆ ಎಂಜಿನಿಯರಿಂಗ್ ಪದವಿ ಪಡೆಯುತ್ತಿದ್ದೇನೆ.' }
-  ];
+  var stories = [];
+  var teamData = {};
+  var aboutData = {};
+  var activeGalleryFilter = 'all';
 
   var pressItems = [
     { outlet_name: 'Placeholder News Outlet', headline_en: 'KIRAN Foundation launches digital literacy drive in Kudachi', headline_kn: 'ಕಿರಣ ಫೌಂಡೇಶನ್ ಕುಡಚಿಯಲ್ಲಿ ಡಿಜಿಟಲ್ ಸಾಕ್ಷರತೆ ಅಭಿಯಾನ ಪ್ರಾರಂಭಿಸಿದೆ',
@@ -407,17 +397,28 @@
     renderStories();
     renderPress();
     renderImpact();
+    renderTeam();
+    renderAbout();
   }
 
-  // ── Gallery ──
+  // ── Gallery (with category filtering) ──
 
   var galleryGrid = document.getElementById('gallery-grid');
   var currentGalleryIndex = 0;
+  var filteredGallery = [];
+
+  function getFilteredGallery() {
+    if (activeGalleryFilter === 'all') return galleryItems;
+    return galleryItems.filter(function (item) {
+      return item.category === activeGalleryFilter;
+    });
+  }
 
   function renderGallery() {
     var lang = getCurrentLang();
+    filteredGallery = getFilteredGallery();
     var html = '';
-    galleryItems.forEach(function (item, i) {
+    filteredGallery.forEach(function (item, i) {
       var caption = lang === 'kn' ? item.caption_kn : item.caption_en;
       var bgColor = galleryColors[i % galleryColors.length];
       var inner;
@@ -442,6 +443,15 @@
     });
   }
 
+  document.querySelectorAll('.filter-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.filter-btn').forEach(function (b) { b.classList.remove('active'); });
+      this.classList.add('active');
+      activeGalleryFilter = this.getAttribute('data-filter');
+      renderGallery();
+    });
+  });
+
   // ── Lightbox ──
 
   var lightbox = document.getElementById('lightbox');
@@ -462,7 +472,7 @@
   }
 
   function updateLightbox() {
-    var item = galleryItems[currentGalleryIndex];
+    var item = filteredGallery[currentGalleryIndex];
     var lang = getCurrentLang();
     var caption = lang === 'kn' ? item.caption_kn : item.caption_en;
     lightboxCaption.textContent = caption;
@@ -482,19 +492,19 @@
 
   lightbox.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
   lightbox.querySelector('.lightbox-prev').addEventListener('click', function () {
-    currentGalleryIndex = (currentGalleryIndex - 1 + galleryItems.length) % galleryItems.length;
+    currentGalleryIndex = (currentGalleryIndex - 1 + filteredGallery.length) % filteredGallery.length;
     updateLightbox();
   });
   lightbox.querySelector('.lightbox-next').addEventListener('click', function () {
-    currentGalleryIndex = (currentGalleryIndex + 1) % galleryItems.length;
+    currentGalleryIndex = (currentGalleryIndex + 1) % filteredGallery.length;
     updateLightbox();
   });
   lightbox.addEventListener('click', function (e) { if (e.target === lightbox) closeLightbox(); });
   document.addEventListener('keydown', function (e) {
     if (!lightbox.classList.contains('open')) return;
     if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') { currentGalleryIndex = (currentGalleryIndex - 1 + galleryItems.length) % galleryItems.length; updateLightbox(); }
-    if (e.key === 'ArrowRight') { currentGalleryIndex = (currentGalleryIndex + 1) % galleryItems.length; updateLightbox(); }
+    if (e.key === 'ArrowLeft') { currentGalleryIndex = (currentGalleryIndex - 1 + filteredGallery.length) % filteredGallery.length; updateLightbox(); }
+    if (e.key === 'ArrowRight') { currentGalleryIndex = (currentGalleryIndex + 1) % filteredGallery.length; updateLightbox(); }
   });
 
   // ── Podcast ──
@@ -581,17 +591,25 @@
 
   function renderStories() {
     var lang = getCurrentLang();
+    if (!stories || stories.length === 0) {
+      storiesCarousel.innerHTML = '<div class="stories-empty"><p>' +
+        (lang === 'kn' ? 'ನಮ್ಮ ಸಮುದಾಯದ ಕಥೆಗಳು — ಶೀಘ್ರದಲ್ಲೇ ಬರಲಿದೆ.' : 'Stories from our community — coming soon.') + '</p></div>';
+      return;
+    }
     var html = '';
     stories.forEach(function (s) {
-      var outcome = lang === 'kn' ? s.outcome_kn : s.outcome_en;
-      var quote = lang === 'kn' ? s.quote_kn : s.quote_en;
-      var isPlaceholder = s.name === 'REPLACE WITH REAL STORY';
-      html += '<div class="story-card"><div class="story-avatar">👤</div>' +
-        '<div class="story-name">' + s.name + '</div>' +
-        '<div class="story-outcome">' + outcome + '</div>' +
-        '<div class="story-quote">' + quote + '</div>' +
-        (isPlaceholder ? '<div class="story-placeholder-tag">REPLACE WITH REAL STORY</div>' : '') +
-        '</div>';
+      var outcome = lang === 'kn' ? (s.outcome_kn || s.outcome_en || '') : (s.outcome_en || '');
+      var quote = lang === 'kn' ? (s.quote_kn || s.quote_en || '') : (s.quote_en || '');
+      var photoHtml = s.photo
+        ? '<img class="story-card-photo" src="' + s.photo + '" alt="' + (s.name || '') + '" loading="lazy">'
+        : '<div class="story-card-photo-placeholder">👤</div>';
+      html += '<div class="story-card">' + photoHtml +
+        '<div class="story-card-body">' +
+        '<div class="story-card-name">' + (s.name || '') + '</div>' +
+        (s.location ? '<div class="story-card-location">' + s.location + '</div>' : '') +
+        '<div class="story-card-outcome">' + outcome + '</div>' +
+        '<div class="story-card-quote">' + quote + '</div>' +
+        '</div></div>';
     });
     storiesCarousel.innerHTML = html;
   }
@@ -668,6 +686,52 @@
     barsEl.innerHTML = barsHtml;
   }
 
+  // ── Team ──
+
+  function renderTeam() {
+    var grid = document.getElementById('team-grid');
+    var empty = document.getElementById('team-empty');
+    if (!grid) return;
+    var lang = getCurrentLang();
+    var members = (teamData && teamData.members) ? teamData.members : [];
+    if (members.length === 0) {
+      grid.innerHTML = '';
+      if (empty) { empty.style.display = 'block'; empty.querySelector('p').textContent = lang === 'kn' ? 'ತಂಡದ ವಿವರ ಶೀಘ್ರದಲ್ಲೇ.' : 'Team profiles coming soon.'; }
+      return;
+    }
+    if (empty) empty.style.display = 'none';
+    var html = '';
+    members.forEach(function (m) {
+      var photoHtml = m.photo
+        ? '<img class="team-card-photo" src="' + m.photo + '" alt="' + (m.name || '') + '" loading="lazy">'
+        : '<div class="team-card-photo-placeholder">👤</div>';
+      var role = lang === 'kn' ? (m.role_kn || m.role_en || '') : (m.role_en || '');
+      var bio = lang === 'kn' ? (m.bio_kn || m.bio_en || '') : (m.bio_en || '');
+      html += '<div class="team-card">' + photoHtml +
+        '<div class="team-card-body">' +
+        '<div class="team-card-name">' + (m.name || '') + '</div>' +
+        '<div class="team-card-role">' + role + '</div>' +
+        (bio ? '<div class="team-card-bio">' + bio + '</div>' : '') +
+        '</div></div>';
+    });
+    grid.innerHTML = html;
+  }
+
+  // ── About (CMS content) ──
+
+  function renderAbout() {
+    var lang = getCurrentLang();
+    if (!aboutData) return;
+    if (aboutData.mission_en || aboutData.mission_kn) {
+      var missionEl = document.querySelector('.mission-banner p');
+      if (missionEl) {
+        if (aboutData.mission_en) missionEl.setAttribute('data-en', aboutData.mission_en);
+        if (aboutData.mission_kn) missionEl.setAttribute('data-kn', aboutData.mission_kn);
+        missionEl.textContent = lang === 'kn' ? (aboutData.mission_kn || aboutData.mission_en) : aboutData.mission_en;
+      }
+    }
+  }
+
   // ── Press download button ──
 
   var pressDownload = document.getElementById('press-download');
@@ -734,6 +798,23 @@
       if (fab) fab.href = 'https://wa.me/' + s.whatsapp_number;
     }
 
+    var heroFields = [
+      { id: 'hero-badge', en: 'hero_badge_en', kn: 'hero_badge_kn' },
+      { id: 'hero-headline', en: 'hero_headline_en', kn: 'hero_headline_kn' },
+      { id: 'hero-subtitle', en: 'hero_subtitle_en', kn: 'hero_subtitle_kn' },
+      { id: 'vision-subtitle', en: 'vision_subtitle_en', kn: 'vision_subtitle_kn' }
+    ];
+    heroFields.forEach(function (f) {
+      if (s[f.en] || s[f.kn]) {
+        var el = document.getElementById(f.id);
+        if (el) {
+          if (s[f.en]) el.setAttribute('data-en', s[f.en]);
+          if (s[f.kn]) el.setAttribute('data-kn', s[f.kn]);
+          el.textContent = lang === 'kn' ? (s[f.kn] || s[f.en]) : s[f.en];
+        }
+      }
+    });
+
     var socialMap = [
       { key: 'facebook_url', label: 'Facebook' },
       { key: 'instagram_url', label: 'Instagram' },
@@ -764,7 +845,10 @@
       fetchJSON('/content/podcasts.json'),
       fetchJSON('/content/press.json'),
       fetchJSON('/content/settings.json'),
-      fetchJSON('/content/impact.json')
+      fetchJSON('/content/impact.json'),
+      fetchJSON('/content/team.json'),
+      fetchJSON('/content/stories.json'),
+      fetchJSON('/content/about.json')
     ]).then(function (results) {
       if (results[0] && results[0].items) galleryItems = results[0].items;
       if (results[1] && results[1].items) videos = results[1].items;
@@ -772,6 +856,9 @@
       if (results[3] && results[3].items) pressItems = results[3].items;
       if (results[4]) applySettings(results[4]);
       if (results[5]) impactData = results[5];
+      if (results[6]) teamData = results[6];
+      if (results[7] && results[7].stories) stories = results[7].stories;
+      if (results[8]) aboutData = results[8];
       renderAll();
     });
   }

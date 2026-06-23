@@ -11,6 +11,8 @@
 </head>
 <body data-lang="en">
 
+  <div class="top-stripe"></div>
+
   <!-- ══════ NAVBAR ══════ -->
   <nav class="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-container">
@@ -109,16 +111,15 @@
     </div>
 
     <div class="hero-content">
-      <div class="hero-badge" data-en="Youth Empowerment Initiative" data-kn="ಯುವ ಸಬಲೀಕರಣ ಉಪಕ್ರಮ">Youth Empowerment Initiative</div>
+      <div class="hero-badge" id="hero-badge" data-en="Kudachi, Belagavi District — Building Tomorrow" data-kn="ಕುಡಚಿ, ಬೆಳಗಾವಿ ಜಿಲ್ಲೆ — ನಾಳೆ ನಿರ್ಮಾಣ">Kudachi, Belagavi District — Building Tomorrow</div>
       <h1>
-        <span data-en="A Ray of Light for" data-kn="ನಮ್ಮ ಯುವಕರಿಗೆ">A Ray of Light for</span><br>
-        <span class="highlight" data-en="Our Youth" data-kn="ಬೆಳಕಿನ ಕಿರಣ">Our Youth</span>
+        <span id="hero-headline" data-en="Building a self-reliant generation" data-kn="ಸ್ವಾವಲಂಬಿ ತಲೆಮಾರನ್ನು ನಿರ್ಮಿಸುತ್ತಿದ್ದೇವೆ">Building a self-reliant generation</span>
         <button class="tts-btn" data-section="hero" aria-label="Read hero section aloud" title="Listen">🔊</button>
       </h1>
       <div class="tts-warning" data-section="hero"></div>
-      <p class="hero-sub" data-en="KIRAN Foundation empowers rural youth in Kudachi, Belagavi District through skill development, vocational training, and pathways to meaningful employment."
-         data-kn="ಕಿರಣ ಫೌಂಡೇಶನ್ ಕುಡಚಿ, ಬೆಳಗಾವಿ ಜಿಲ್ಲೆಯ ಗ್ರಾಮೀಣ ಯುವಕರನ್ನು ಕೌಶಲ್ಯ ಅಭಿವೃದ್ಧಿ, ವೃತ್ತಿಪರ ತರಬೇತಿ ಮತ್ತು ಅರ್ಥಪೂರ್ಣ ಉದ್ಯೋಗದ ಮಾರ್ಗಗಳ ಮೂಲಕ ಸಬಲೀಕರಣಗೊಳಿಸುತ್ತದೆ.">
-        KIRAN Foundation empowers rural youth in Kudachi, Belagavi District through skill development, vocational training, and pathways to meaningful employment.
+      <p class="hero-sub" id="hero-subtitle" data-en="We knock on doors. We listen first. Then we build skill programs, job connections and community strength — right here in Kudachi."
+         data-kn="ನಾವು ಬಾಗಿಲು ತಟ್ಟುತ್ತೇವೆ. ಮೊದಲು ಕೇಳುತ್ತೇವೆ. ನಂತರ ಕೌಶಲ್ಯ ತರಬೇತಿ, ಉದ್ಯೋಗ ಸಂಪರ್ಕ ಮತ್ತು ಸಮುದಾಯ ಬಲವನ್ನು ನಿರ್ಮಿಸುತ್ತೇವೆ — ಇಲ್ಲೇ ಕುಡಚಿಯಲ್ಲಿ.">
+        We knock on doors. We listen first. Then we build skill programs, job connections and community strength — right here in Kudachi.
       </p>
       <div class="hero-buttons">
         <button class="btn btn-primary" data-open-modal="registration" data-en="Register as Youth ✦" data-kn="ಯುವಕರಾಗಿ ನೋಂದಣಿ ✦">Register as Youth ✦</button>
@@ -137,9 +138,9 @@
         </h2>
         <div class="section-line"></div>
         <div class="tts-warning" data-section="about"></div>
-        <p data-en="Building a self-reliant generation through knowledge, skills, and opportunity."
-           data-kn="ಜ್ಞಾನ, ಕೌಶಲ್ಯ ಮತ್ತು ಅವಕಾಶದ ಮೂಲಕ ಸ್ವಾವಲಂಬಿ ಪೀಳಿಗೆಯನ್ನು ನಿರ್ಮಿಸುವುದು.">
-          Building a self-reliant generation through knowledge, skills, and opportunity.
+        <p id="vision-subtitle" data-en="Every promise we make is tracked. Every number on this site is real."
+           data-kn="ನಾವು ಮಾಡಿದ ಪ್ರತಿ ಭರವಸೆ ಟ್ರ್ಯಾಕ್ ಆಗುತ್ತದೆ. ಈ ಸೈಟ್‌ನಲ್ಲಿನ ಪ್ರತಿ ಸಂಖ್ಯೆ ನಿಜ.">
+          Every promise we make is tracked. Every number on this site is real.
         </p>
       </div>
 
@@ -192,6 +193,24 @@
       <!-- Pillar Expand Panel -->
       <div class="pillar-panel-wrapper" id="pillar-panel-wrapper">
         <div class="pillar-panel" id="pillar-panel"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════ FOUNDING TEAM ══════ -->
+  <section id="team" data-bg-section="team" data-overlay="rgba(16,26,50,0.88),rgba(16,26,50,0.92)">
+    <div class="section-container">
+      <div class="section-header">
+        <h2><span data-en="Founding Team" data-kn="ಸಂಸ್ಥಾಪಕ ತಂಡ">Founding Team</span></h2>
+        <div class="section-line"></div>
+        <p data-en="Built from the ground up — by people from this constituency, for this constituency."
+           data-kn="ಈ ಕ್ಷೇತ್ರದ ಜನರಿಂದ, ಈ ಕ್ಷೇತ್ರಕ್ಕಾಗಿ ನಿರ್ಮಿಸಲಾಗಿದೆ.">
+          Built from the ground up — by people from this constituency, for this constituency.
+        </p>
+      </div>
+      <div id="team-grid" class="team-grid"></div>
+      <div id="team-empty" class="section-empty-state" style="display:none">
+        <p data-en="Team profiles coming soon." data-kn="ತಂಡದ ವಿವರ ಶೀಘ್ರದಲ್ಲೇ.">Team profiles coming soon.</p>
       </div>
     </div>
   </section>
@@ -279,6 +298,15 @@
            data-kn="ನಮ್ಮ ಕಾರ್ಯಕ್ರಮಗಳು ಮತ್ತು ಕಾರ್ಯಕ್ರಮಗಳ ಕ್ಷಣಗಳು.">
           Moments from our programs and events.
         </p>
+      </div>
+      <div class="gallery-filters" id="gallery-filters">
+        <button class="filter-btn active" data-filter="all" data-en="All" data-kn="ಎಲ್ಲವೂ">All</button>
+        <button class="filter-btn" data-filter="village-visits" data-en="Village Visits" data-kn="ಗ್ರಾಮ ಭೇಟಿ">Village Visits</button>
+        <button class="filter-btn" data-filter="skill-camps" data-en="Skill Camps" data-kn="ಕೌಶಲ್ಯ ಶಿಬಿರ">Skill Camps</button>
+        <button class="filter-btn" data-filter="sports-events" data-en="Sports & Events" data-kn="ಕ್ರೀಡೆ ಮತ್ತು ಕಾರ್ಯಕ್ರಮ">Sports & Events</button>
+        <button class="filter-btn" data-filter="job-fairs" data-en="Job Fairs" data-kn="ಉದ್ಯೋಗ ಮೇಳ">Job Fairs</button>
+        <button class="filter-btn" data-filter="community" data-en="Community" data-kn="ಸಮುದಾಯ">Community</button>
+        <button class="filter-btn" data-filter="field-visits" data-en="Field Visits" data-kn="ಕ್ಷೇತ್ರ ಭೇಟಿ">Field Visits</button>
       </div>
       <div class="gallery-grid" id="gallery-grid"></div>
     </div>

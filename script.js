@@ -1213,7 +1213,8 @@
             overlay = defaultOverlay[key] || 'rgba(16,26,50,0.85)';
           }
 
-          el.style.backgroundImage = 'linear-gradient(' + overlay + ',' + overlay + '), url(\'' + url + '\')';
+          // opacity=35 on impact → linear-gradient(rgba(5,8,18,0.65) 0%, rgba(5,8,18,0.65) 100%), url(...)
+          el.style.backgroundImage = 'linear-gradient(' + overlay + ' 0%, ' + overlay + ' 100%), url(\'' + url + '\')';
           el.style.backgroundSize = 'cover';
           el.style.backgroundPosition = 'center';
           el.style.backgroundAttachment = window.innerWidth > 768 ? 'fixed' : 'scroll';

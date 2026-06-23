@@ -198,9 +198,9 @@ collections:
                 min: 5
                 max: 50
                 step: 5
-                default: 15
+                default: 25
                 required: false
-                hint: "5 = barely visible (very dark), 15 = default, 25 = clearly visible, 40 = strong photo, 50 = maximum. Leave blank for default (15%)."
+                hint: "How much of your photo shows through the dark overlay. Higher number = brighter photo. 5 = almost invisible (very dark overlay), 15 = subtle texture, 25 = photo visible, 35 = photo clearly visible — RECOMMENDED, 50 = photo at full strength. For most sections, use 25-35 for best results."
 
       - name: "settings"
         label: "Site Settings"

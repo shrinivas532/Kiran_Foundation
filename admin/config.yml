@@ -108,6 +108,29 @@ collections:
               - { name: "article_url", label: "Article URL", widget: "string", required: false, hint: "Link to the online article" }
               - { name: "pdf", label: "Press Note PDF", widget: "file", required: false, hint: "Upload the press release PDF" }
 
+      - name: "backgrounds"
+        label: "Section Backgrounds"
+        file: "content/backgrounds.json"
+        format: "json"
+        fields:
+          - name: "items"
+            label: "Section Backgrounds"
+            label_singular: "Background"
+            widget: "list"
+            summary: "{{fields.section_key}}"
+            hint: "Upload a background photo for each section. Leave photo empty to use the default image."
+            fields:
+              - name: "section_key"
+                label: "Section"
+                widget: "select"
+                options: ["about", "programs", "gallery", "podcast", "videos", "impact", "stories", "press", "register", "contact", "footer"]
+                hint: "Which section this background is for"
+              - name: "photo"
+                label: "Background Photo"
+                widget: "image"
+                required: false
+                hint: "Upload a wide landscape photo. Leave empty to use default."
+
       - name: "settings"
         label: "Site Settings"
         file: "content/settings.json"

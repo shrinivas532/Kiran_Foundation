@@ -1057,23 +1057,62 @@
 
 
   // ════════════════════════════════════════
-  // LAZY BACKGROUND IMAGES
+  // SECTION BACKGROUND IMAGES (CMS-driven)
   // ════════════════════════════════════════
 
-  var bgTargets = document.querySelectorAll(
-    '#about, #programs, #gallery, #podcast, #videos, #impact, #stories, #press, #register, #contact, .footer, .hero'
-  );
+  var BG_FALLBACKS = {
+    about:    'https://images.unsplash.com/photo-1532375810709-75b1da00537c?auto=format&fit=crop&w=1920&q=80',
+    programs: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1920&q=80',
+    gallery:  'https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1920&q=80',
+    podcast:  'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?auto=format&fit=crop&w=1920&q=80',
+    videos:   'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1920&q=80',
+    impact:   'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1920&q=80',
+    stories:  'https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=1920&q=80',
+    press:    'https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1920&q=80',
+    register: 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1920&q=80',
+    contact:  'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1920&q=80',
+    footer:   'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1920&q=80'
+  };
 
-  var bgObserver = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('bg-loaded');
-        bgObserver.unobserve(entry.target);
-      }
+  function applyBackgrounds(cmsItems) {
+    var bgMap = {};
+    Object.keys(BG_FALLBACKS).forEach(function (k) { bgMap[k] = BG_FALLBACKS[k]; });
+
+    if (cmsItems && cmsItems.length) {
+      cmsItems.forEach(function (item) {
+        var key = (item.section_key || '').trim();
+        var url = (item.photo || '').trim();
+        if (key && url) bgMap[key] = url;
+      });
+    }
+
+    var bgObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var el = entry.target;
+          var key = el.getAttribute('data-bg-section');
+          var url = bgMap[key];
+          if (!url) return;
+          var overlayAttr = el.getAttribute('data-overlay') || 'rgba(16,26,50,0.85),rgba(16,26,50,0.88)';
+          var parts = overlayAttr.split(',rgba');
+          var c1 = parts[0];
+          var c2 = parts.length > 1 ? 'rgba' + parts[1] : c1;
+          el.style.backgroundImage = 'linear-gradient(' + c1 + ',' + c2 + '), url(\'' + url + '\')';
+          el.classList.add('bg-loaded');
+          bgObserver.unobserve(el);
+        }
+      });
+    }, { rootMargin: '200px' });
+
+    document.querySelectorAll('[data-bg-section]').forEach(function (el) {
+      bgObserver.observe(el);
     });
-  }, { rootMargin: '200px' });
+  }
 
-  bgTargets.forEach(function (el) { bgObserver.observe(el); });
+  // Load CMS backgrounds, then apply
+  fetchJSON('/content/backgrounds.json').then(function (data) {
+    applyBackgrounds(data && data.items ? data.items : []);
+  });
 
 
   // ════════════════════════════════════════

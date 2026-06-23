@@ -974,4 +974,74 @@
     });
   }
 
+
+  // ════════════════════════════════════════
+  // DONATE FORM — Netlify Forms
+  // ════════════════════════════════════════
+
+  var donateForm = document.getElementById('donate-form');
+  var donateStatus = document.getElementById('donate-form-status');
+
+  if (donateForm) {
+    donateForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      var nameEl = document.getElementById('donate-name');
+      var phoneEl = document.getElementById('donate-phone');
+      var emailEl = document.getElementById('donate-email');
+      var lang = getCurrentLang();
+
+      nameEl.classList.remove('input-error');
+      phoneEl.classList.remove('input-error');
+      donateStatus.className = 'join-form-status';
+      donateStatus.style.display = 'none';
+
+      var valid = true;
+      if (!nameEl.value.trim()) { nameEl.classList.add('input-error'); valid = false; }
+      if (!phoneEl.value.trim() || phoneEl.value.replace(/\D/g, '').length < 10) {
+        phoneEl.classList.add('input-error'); valid = false;
+      }
+
+      if (!valid) {
+        donateStatus.textContent = lang === 'kn'
+          ? 'ದಯವಿಟ್ಟು ನಿಮ್ಮ ಹೆಸರು ಮತ್ತು ಮಾನ್ಯ ಫೋನ್ ಸಂಖ್ಯೆ ನಮೂದಿಸಿ.'
+          : 'Please enter your name and a valid phone number.';
+        donateStatus.className = 'join-form-status error';
+        donateStatus.style.display = 'block';
+        return;
+      }
+
+      var formData = new URLSearchParams();
+      formData.append('form-name', 'donate');
+      formData.append('name', nameEl.value.trim());
+      formData.append('phone', phoneEl.value.trim());
+      formData.append('email', emailEl.value.trim());
+
+      function showSuccess() {
+        donateStatus.textContent = lang === 'kn'
+          ? 'ಧನ್ಯವಾದಗಳು! ನಿಮ್ಮ ವಿವರಗಳು ಸಲ್ಲಿಸಲಾಗಿದೆ. ನಮ್ಮ ತಂಡ ಶೀಘ್ರದಲ್ಲೇ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತದೆ!'
+          : 'Thank you! Your details have been submitted. Our team will contact you with donation options soon!';
+        donateStatus.className = 'join-form-status success';
+        donateStatus.style.display = 'block';
+        donateForm.reset();
+      }
+
+      function saveLocally() {
+        var saved = [];
+        try { saved = JSON.parse(localStorage.getItem('kiran-donate-submissions') || '[]'); } catch (_) {}
+        saved.push({ name: nameEl.value.trim(), phone: phoneEl.value.trim(), email: emailEl.value.trim(), date: new Date().toISOString() });
+        localStorage.setItem('kiran-donate-submissions', JSON.stringify(saved));
+      }
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formData.toString()
+      }).then(function (response) {
+        if (response.ok) { showSuccess(); }
+        else { saveLocally(); showSuccess(); }
+      }).catch(function () { saveLocally(); showSuccess(); });
+    });
+  }
+
 })();

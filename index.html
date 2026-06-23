@@ -37,6 +37,7 @@
         <li><a href="#stories" data-en="Stories" data-kn="ಕಥೆಗಳು">Stories</a></li>
         <li><a href="#register" data-en="Register" data-kn="ನೋಂದಣಿ">Register</a></li>
         <li><a href="#" data-open-modal="volunteer" data-en="Join Us" data-kn="ನಮ್ಮೊಂದಿಗೆ ಸೇರಿ">Join Us</a></li>
+        <li><a href="#" data-open-modal="donate" class="nav-donate-btn" data-en="Donate" data-kn="ದಾನ">Donate</a></li>
         <li><a href="#contact" data-en="Contact" data-kn="ಸಂಪರ್ಕ">Contact</a></li>
         <li>
           <div class="lang-toggle">
@@ -68,6 +69,7 @@
       <a href="#stories" role="menuitem" data-en="Stories" data-kn="ಕಥೆಗಳು">Stories</a>
       <a href="#register" role="menuitem" data-en="Register" data-kn="ನೋಂದಣಿ">Register</a>
       <a href="#" role="menuitem" data-open-modal="volunteer" data-en="Join Us" data-kn="ನಮ್ಮೊಂದಿಗೆ ಸೇರಿ">Join Us</a>
+      <a href="#" role="menuitem" data-open-modal="donate" class="mobile-donate-btn" data-en="Donate" data-kn="ದಾನ">Donate</a>
       <a href="#contact" role="menuitem" data-en="Contact" data-kn="ಸಂಪರ್ಕ">Contact</a>
       <div class="mobile-lang-toggle">
         <button class="lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
@@ -529,6 +531,46 @@
           <button type="submit" class="btn btn-primary join-submit-btn"
                   data-en="Submit ✦" data-kn="ಸಲ್ಲಿಸಿ ✦">Submit ✦</button>
           <div class="join-form-status" id="join-form-status"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════ DONATE MODAL ══════ -->
+  <div class="modal-overlay" id="donate-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title-donate">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modal-title-donate" data-en="Support KIRAN Foundation" data-kn="ಕಿರಣ ಫೌಂಡೇಶನ್‌ಗೆ ಬೆಂಬಲ">Support KIRAN Foundation</h3>
+        <button class="modal-close" aria-label="Close modal">✕</button>
+      </div>
+      <div class="modal-body">
+        <p data-en="Thank you for your interest in supporting our youth empowerment work. Please share your details below and our team will contact you with donation options."
+           data-kn="ನಮ್ಮ ಯುವ ಸಬಲೀಕರಣ ಕಾರ್ಯಕ್ಕೆ ಬೆಂಬಲಿಸುವ ಆಸಕ್ತಿಗೆ ಧನ್ಯವಾದಗಳು. ದಯವಿಟ್ಟು ಕೆಳಗೆ ನಿಮ್ಮ ವಿವರಗಳನ್ನು ಹಂಚಿಕೊಳ್ಳಿ, ನಮ್ಮ ತಂಡ ದಾನ ಆಯ್ಕೆಗಳೊಂದಿಗೆ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತದೆ.">
+          Thank you for your interest in supporting our youth empowerment work. Please share your details below and our team will contact you with donation options.
+        </p>
+        <form id="donate-form" class="join-form" name="donate" data-netlify="true" novalidate>
+          <input type="hidden" name="form-name" value="donate">
+          <div class="form-group">
+            <label for="donate-name" data-en="Your Name" data-kn="ನಿಮ್ಮ ಹೆಸರು">Your Name</label>
+            <input type="text" id="donate-name" name="name" required autocomplete="name"
+                   data-placeholder-en="Enter your full name" data-placeholder-kn="ನಿಮ್ಮ ಪೂರ್ಣ ಹೆಸರನ್ನು ನಮೂದಿಸಿ"
+                   placeholder="Enter your full name">
+          </div>
+          <div class="form-group">
+            <label for="donate-phone" data-en="Phone Number" data-kn="ಫೋನ್ ಸಂಖ್ಯೆ">Phone Number</label>
+            <input type="tel" id="donate-phone" name="phone" required autocomplete="tel"
+                   data-placeholder-en="e.g. 9876543210" data-placeholder-kn="ಉದಾ. 9876543210"
+                   placeholder="e.g. 9876543210">
+          </div>
+          <div class="form-group">
+            <label for="donate-email" data-en="Email (optional)" data-kn="ಇಮೇಲ್ (ಐಚ್ಛಿಕ)">Email (optional)</label>
+            <input type="email" id="donate-email" name="email" autocomplete="email"
+                   data-placeholder-en="your@email.com" data-placeholder-kn="your@email.com"
+                   placeholder="your@email.com">
+          </div>
+          <button type="submit" class="btn btn-primary join-submit-btn"
+                  data-en="Submit ✦" data-kn="ಸಲ್ಲಿಸಿ ✦">Submit ✦</button>
+          <div class="join-form-status" id="donate-form-status"></div>
         </form>
       </div>
     </div>

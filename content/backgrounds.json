@@ -1,15 +1,48 @@
 {
   "items": [
-    { "section_key": "about", "photo": "" },
-    { "section_key": "programs", "photo": "" },
-    { "section_key": "gallery", "photo": "" },
-    { "section_key": "podcast", "photo": "" },
-    { "section_key": "videos", "photo": "" },
-    { "section_key": "impact", "photo": "" },
-    { "section_key": "stories", "photo": "" },
-    { "section_key": "press", "photo": "" },
-    { "section_key": "register", "photo": "" },
-    { "section_key": "contact", "photo": "" },
-    { "section_key": "footer", "photo": "" }
+    {
+      "section_key": "about",
+      "photo": ""
+    },
+    {
+      "section_key": "programs",
+      "photo": ""
+    },
+    {
+      "section_key": "gallery",
+      "photo": ""
+    },
+    {
+      "section_key": "podcast",
+      "photo": ""
+    },
+    {
+      "section_key": "videos",
+      "photo": ""
+    },
+    {
+      "section_key": "impact",
+      "photo": "/assets/uploads/whatsapp-image-2026-06-21-at-1.45.52-pm.jpeg"
+    },
+    {
+      "section_key": "stories",
+      "photo": ""
+    },
+    {
+      "section_key": "press",
+      "photo": ""
+    },
+    {
+      "section_key": "register",
+      "photo": ""
+    },
+    {
+      "section_key": "contact",
+      "photo": ""
+    },
+    {
+      "section_key": "footer",
+      "photo": ""
+    }
   ]
 }

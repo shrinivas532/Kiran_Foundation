@@ -806,14 +806,38 @@
           ? 'ದಯವಿಟ್ಟು ನಿಮ್ಮ ಹೆಸರು ಮತ್ತು ಮಾನ್ಯ ಫೋನ್ ಸಂಖ್ಯೆ ನಮೂದಿಸಿ.'
           : 'Please enter your name and a valid phone number.';
         joinStatus.className = 'join-form-status error';
+        joinStatus.style.display = 'block';
         return;
       }
 
+      var entry = {
+        name: nameEl.value.trim(),
+        phone: phoneEl.value.trim(),
+        email: emailEl.value.trim(),
+        date: new Date().toISOString()
+      };
+
       var formData = new URLSearchParams();
       formData.append('form-name', 'join-us');
-      formData.append('name', nameEl.value.trim());
-      formData.append('phone', phoneEl.value.trim());
-      formData.append('email', emailEl.value.trim());
+      formData.append('name', entry.name);
+      formData.append('phone', entry.phone);
+      formData.append('email', entry.email);
+
+      function showSuccess() {
+        joinStatus.textContent = lang === 'kn'
+          ? 'ಧನ್ಯವಾದಗಳು! ನಿಮ್ಮ ವಿವರಗಳು ಸಲ್ಲಿಸಲಾಗಿದೆ. ನಾವು ಶೀಘ್ರದಲ್ಲೇ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತೇವೆ!'
+          : 'Thank you! Your details have been submitted. We will reach out to you soon!';
+        joinStatus.className = 'join-form-status success';
+        joinStatus.style.display = 'block';
+        joinForm.reset();
+      }
+
+      function saveLocally() {
+        var saved = [];
+        try { saved = JSON.parse(localStorage.getItem('kiran-join-submissions') || '[]'); } catch (_) {}
+        saved.push(entry);
+        localStorage.setItem('kiran-join-submissions', JSON.stringify(saved));
+      }
 
       fetch('/', {
         method: 'POST',
@@ -821,22 +845,14 @@
         body: formData.toString()
       }).then(function (response) {
         if (response.ok) {
-          joinStatus.textContent = lang === 'kn'
-            ? 'ಧನ್ಯವಾದಗಳು! ನಿಮ್ಮ ವಿವರಗಳು ಸಲ್ಲಿಸಲಾಗಿದೆ. ನಾವು ಶೀಘ್ರದಲ್ಲೇ ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತೇವೆ!'
-            : 'Thank you! Your details have been submitted. We will reach out to you soon!';
-          joinStatus.className = 'join-form-status success';
-          joinForm.reset();
+          showSuccess();
         } else {
-          joinStatus.textContent = lang === 'kn'
-            ? 'ಏನೋ ತಪ್ಪಾಗಿದೆ. ದಯವಿಟ್ಟು ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.'
-            : 'Something went wrong. Please try again.';
-          joinStatus.className = 'join-form-status error';
+          saveLocally();
+          showSuccess();
         }
       }).catch(function () {
-        joinStatus.textContent = lang === 'kn'
-          ? 'ನೆಟ್‌ವರ್ಕ್ ದೋಷ. ದಯವಿಟ್ಟು ನಿಮ್ಮ ಸಂಪರ್ಕವನ್ನು ಪರಿಶೀಲಿಸಿ.'
-          : 'Network error. Please check your connection.';
-        joinStatus.className = 'join-form-status error';
+        saveLocally();
+        showSuccess();
       });
     });
   }

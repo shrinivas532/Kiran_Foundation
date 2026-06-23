@@ -1162,19 +1162,17 @@
   };
 
   function opacityToOverlay(sectionKey, opacityPercent) {
-    var alpha = 1 - (opacityPercent / 100);
-    var a1 = alpha.toFixed(2);
-    var a2 = Math.min(alpha + 0.04, 1).toFixed(2);
+    var alpha = parseFloat((1 - (opacityPercent / 100)).toFixed(2));
     if (sectionKey === 'register') {
-      return 'rgba(22,33,62,' + a1 + '),rgba(15,52,96,' + a2 + ')';
+      return 'rgba(243,169,61,' + alpha + ')';
     }
-    if (sectionKey === 'impact') {
-      return 'rgba(5,8,18,' + a1 + '),rgba(5,8,18,' + a2 + ')';
+    if (sectionKey === 'vision') {
+      return 'rgba(251,241,221,' + alpha + ')';
     }
-    if (sectionKey === 'footer') {
-      return 'rgba(10,18,36,' + a1 + '),rgba(10,18,36,' + a2 + ')';
+    if (sectionKey === 'impact' || sectionKey === 'footer') {
+      return 'rgba(5,8,18,' + alpha + ')';
     }
-    return 'rgba(16,26,50,' + a1 + '),rgba(16,26,50,' + a2 + ')';
+    return 'rgba(16,26,50,' + alpha + ')';
   }
 
   function applyBackgrounds(cmsItems) {
@@ -1193,6 +1191,13 @@
       });
     }
 
+    var defaultOverlay = {
+      'vision':   'rgba(251,241,221,0.88)',
+      'register': 'rgba(243,169,61,0.92)',
+      'impact':   'rgba(5,8,18,0.86)',
+      'footer':   'rgba(5,8,18,0.92)'
+    };
+
     var bgObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -1205,14 +1210,13 @@
           if (opacityMap[key] != null) {
             overlay = opacityToOverlay(key, opacityMap[key]);
           } else {
-            var overlayAttr = el.getAttribute('data-overlay') || 'rgba(16,26,50,0.85),rgba(16,26,50,0.88)';
-            overlay = overlayAttr;
+            overlay = defaultOverlay[key] || 'rgba(16,26,50,0.85)';
           }
 
-          var parts = overlay.split(',rgba');
-          var c1 = parts[0];
-          var c2 = parts.length > 1 ? 'rgba' + parts[1] : c1;
-          el.style.backgroundImage = 'linear-gradient(' + c1 + ',' + c2 + '), url(\'' + url + '\')';
+          el.style.backgroundImage = 'linear-gradient(' + overlay + ',' + overlay + '), url(\'' + url + '\')';
+          el.style.backgroundSize = 'cover';
+          el.style.backgroundPosition = 'center';
+          el.style.backgroundAttachment = window.innerWidth > 768 ? 'fixed' : 'scroll';
           el.classList.add('bg-loaded');
           bgObserver.unobserve(el);
         }

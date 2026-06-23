@@ -267,6 +267,115 @@
 
 
   // ════════════════════════════════════════
+  // PILLAR PANELS (Vision section)
+  // ════════════════════════════════════════
+
+  var pillarData = {
+    knowledge: {
+      quote_en: 'Educate, Agitate, Organise.', quote_kn: 'ಶಿಕ್ಷಣ, ಹೋರಾಟ, ಸಂಘಟನೆ.',
+      attr_en: '— Dr. B.R. Ambedkar', attr_kn: '— ಡಾ. ಬಿ.ಆರ್. ಅಂಬೇಡ್ಕರ್',
+      heading_en: 'Knowledge is not a luxury. It is a right.', heading_kn: 'ಜ್ಞಾನ ಐಶ್ವರ್ಯವಲ್ಲ. ಅದು ಹಕ್ಕು.',
+      body_en: 'In Kudachi\'s villages, thousands of young people carry real ability — but without access to the right information, the right skills, the right connections, that ability stays locked inside them. KIRAN Foundation exists to break that lock. When a young person from a small village understands their rights, knows their skills, and has a clear path forward — they do not just change their own life. They become a teacher, a role model, an anchor for everyone around them.',
+      body_kn: 'ಕುಡಚಿಯ ಗ್ರಾಮಗಳಲ್ಲಿ ಸಾವಿರಾರು ಯುವಕ-ಯುವತಿಯರಲ್ಲಿ ನಿಜವಾದ ಸಾಮರ್ಥ್ಯವಿದೆ — ಆದರೆ ಸರಿಯಾದ ಮಾಹಿತಿ, ಕೌಶಲ್ಯ ಮತ್ತು ಸಂಪರ್ಕಗಳಿಲ್ಲದೆ ಆ ಸಾಮರ್ಥ್ಯ ಅವರಲ್ಲೇ ಬಂಧಿಯಾಗಿ ಉಳಿದಿದೆ. ಕಿರಣ್ ಫೌಂಡೇಶನ್ ಆ ಬೀಗವನ್ನು ತೆರೆಯಲು ಇದೆ. ಒಬ್ಬ ಯುವಕ ತನ್ನ ಹಕ್ಕುಗಳನ್ನು ಅರಿತಾಗ, ತನ್ನ ಕೌಶಲ್ಯ ತಿಳಿದಾಗ, ಸ್ಪಷ್ಟ ದಾರಿ ಕಂಡಾಗ — ಅವರು ಬರೀ ತಮ್ಮ ಜೀವನ ಬದಲಾಯಿಸುವುದಿಲ್ಲ. ಸುತ್ತಮುತ್ತಲಿನ ಎಲ್ಲರಿಗೂ ಆದರ್ಶವಾಗುತ್ತಾರೆ.',
+      callout_h_en: 'What this means in practice', callout_h_kn: 'ಇದು ಪ್ರಾಯೋಗಿಕವಾಗಿ ಏನೆಂದರೆ',
+      callout_b_en: 'Every household survey we run, every skill camp we hold, every competitive exam batch we start — these are acts of knowledge transfer. We are not giving anyone charity. We are giving them what was always theirs: information and access.',
+      callout_b_kn: 'ನಾವು ನಡೆಸುವ ಪ್ರತಿ ಮನೆ ಮನೆ ಸಮೀಕ್ಷೆ, ಪ್ರತಿ ಕೌಶಲ್ಯ ಶಿಬಿರ, ಪ್ರತಿ ಸ್ಪರ್ಧಾ ಪರೀಕ್ಷಾ ಬ್ಯಾಚ್ — ಇವು ಜ್ಞಾನ ವರ್ಗಾವಣೆಯ ಕ್ರಿಯೆಗಳು. ನಾವು ಯಾರಿಗೂ ದಾನ ನೀಡುತ್ತಿಲ್ಲ. ಅವರದ್ದೇ ಆದದ್ದನ್ನು — ಮಾಹಿತಿ ಮತ್ತು ಪ್ರವೇಶ — ಅವರಿಗೆ ಹಿಂದಿರುಗಿಸುತ್ತಿದ್ದೇವೆ.',
+      pull_en: 'We do not bring answers. We bring the tools to find them.', pull_kn: 'ನಾವು ಉತ್ತರಗಳನ್ನು ತರುವುದಿಲ್ಲ. ಉತ್ತರ ಹುಡುಕುವ ಸಾಧನಗಳನ್ನು ತರುತ್ತೇವೆ.'
+    },
+    innovation: {
+      quote_en: 'Out of box thinking is the need of the hour for village development.', quote_kn: 'ಗ್ರಾಮ ಅಭಿವೃದ್ಧಿಗೆ ಹೊಸ ಚಿಂತನೆ ಇಂದಿನ ಅಗತ್ಯ.',
+      attr_en: '— Dr. A.P.J. Abdul Kalam', attr_kn: '— ಡಾ. ಎ.ಪಿ.ಜೆ. ಅಬ್ದುಲ್ ಕಲಾಂ',
+      heading_en: 'The solution is removing distance, not adding complexity.', heading_kn: 'ಪರಿಹಾರ ದೂರ ಕಡಿಮೆ ಮಾಡುವುದು, ಸಂಕೀರ್ಣತೆ ಹೆಚ್ಚಿಸುವುದಲ್ಲ.',
+      body_en: 'Every problem in Kudachi\'s villages has been discussed for decades. Roads, water, employment, migration to cities. The discussions are not the shortage — working solutions at the ground level are. KIRAN Foundation does not believe in waiting for the government to solve problems we can start solving today. We connect local youth directly to local institutions — colleges, dairy cooperatives, small businesses, Bangalore and Pune employers who are actively looking for exactly the kind of people our constituency has. The innovation is not in technology. It is in removing the distance between a young person with a skill and an employer who needs it.',
+      body_kn: 'ಕುಡಚಿ ಗ್ರಾಮಗಳ ಪ್ರತಿ ಸಮಸ್ಯೆ ದಶಕಗಳಿಂದ ಚರ್ಚೆಯಾಗಿದೆ. ರಸ್ತೆ, ನೀರು, ಉದ್ಯೋಗ, ನಗರಕ್ಕೆ ವಲಸೆ. ಕೊರತೆ ಚರ್ಚೆಯಲ್ಲಿಲ್ಲ — ಕ್ಷೇತ್ರ ಮಟ್ಟದಲ್ಲಿ ಕಾರ್ಯನಿರ್ವಹಿಸುವ ಪರಿಹಾರಗಳಲ್ಲಿದೆ. ನಾವು ಇಂದು ಪರಿಹರಿಸಬಹುದಾದ ಸಮಸ್ಯೆಗೆ ಸರ್ಕಾರದ ನಿರೀಕ್ಷೆಯಲ್ಲಿ ಕಾಯುವುದನ್ನು ನಂಬುವುದಿಲ್ಲ.',
+      callout_h_en: 'The one thing that makes the biggest difference', callout_h_kn: 'ಅತಿ ಹೆಚ್ಚು ವ್ಯತ್ಯಾಸ ತರುವ ಒಂದು ವಿಷಯ',
+      callout_b_en: 'Take one unemployed youth. Train them for 60 days. Connect them to a job. They send money home. A younger sibling sees this and dares to aspire. That sibling becomes the next person we train. This is how one village changes — not through one big intervention, but through dozens of small ones that reinforce each other.',
+      callout_b_kn: 'ಒಬ್ಬ ನಿರುದ್ಯೋಗಿ ಯುವಕ. 60 ದಿನ ತರಬೇತಿ. ಉದ್ಯೋಗ ಸಂಪರ್ಕ. ಮನೆಗೆ ಹಣ ಕಳಿಸುತ್ತಾರೆ. ತಮ್ಮ ಅಥವಾ ತಂಗಿ ಇದನ್ನು ನೋಡಿ ಆಕಾಂಕ್ಷೆ ಪಡೆಯುತ್ತಾರೆ. ಇದೇ ಆ ಚಕ್ರ.',
+      pull_en: 'The distance between a skilled youth and a waiting employer is the only problem we are here to solve.', pull_kn: 'ಕೌಶಲ್ಯವಂತ ಯುವಕ ಮತ್ತು ಕಾಯುತ್ತಿರುವ ಉದ್ಯೋಗದಾತರ ನಡುವಿನ ಅಂತರ ಕಡಿಮೆ ಮಾಡಲು ನಾವಿದ್ದೇವೆ.'
+    },
+    reform: {
+      quote_en: 'A great man is different from an eminent one in that he is ready to be the servant of society.', quote_kn: 'ಶ್ರೇಷ್ಠ ವ್ಯಕ್ತಿ ಸಮಾಜದ ಸೇವಕನಾಗಲು ಸಿದ್ಧನಾಗಿರುತ್ತಾನೆ.',
+      attr_en: '— Dr. B.R. Ambedkar', attr_kn: '— ಡಾ. ಬಿ.ಆರ್. ಅಂಬೇಡ್ಕರ್',
+      heading_en: 'Reform is not politics. Reform is accountability.', heading_kn: 'ಸುಧಾರಣೆ ರಾಜಕೀಯವಲ್ಲ. ಸುಧಾರಣೆ ಜವಾಬ್ದಾರಿ.',
+      body_en: 'KIRAN Foundation believes the most powerful reform is transparent accountability. Every number on our website — jobs placed, villages surveyed, training camps completed — is real, tracked, and updated. We show our partial progress, not just our wins. We show what we promised and what we actually delivered. This is the reform Karnataka needs today: not more promises, but fewer promises and more proof.',
+      body_kn: 'ಕಿರಣ್ ಫೌಂಡೇಶನ್ ಪಾರದರ್ಶಕ ಜವಾಬ್ದಾರಿಯೇ ಅತ್ಯಂತ ಶಕ್ತಿಶಾಲಿ ಸುಧಾರಣೆ ಎಂದು ನಂಬುತ್ತದೆ. ನಮ್ಮ ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿ ಪ್ರತಿ ಸಂಖ್ಯೆ ನಿಜ, ಟ್ರ್ಯಾಕ್ ಮಾಡಿದ ಮತ್ತು ನವೀಕರಿಸಿದ. ನಾವು ಭಾಗಶಃ ಪ್ರಗತಿ ತೋರಿಸುತ್ತೇವೆ. ಕರ್ನಾಟಕಕ್ಕೆ ಇಂದು ಅಗತ್ಯವಿರುವ ಸುಧಾರಣೆ: ಹೆಚ್ಚು ಭರವಸೆಗಳಲ್ಲ, ಕಡಿಮೆ ಭರವಸೆ ಮತ್ತು ಹೆಚ್ಚು ಪುರಾವೆ.',
+      callout_h_en: 'Who reform starts with', callout_h_kn: 'ಸುಧಾರಣೆ ಯಾರಿಂದ ಪ್ರಾರಂಭ',
+      callout_b_en: 'Dr. Ambedkar said he measured the progress of a community by the degree of progress women have achieved. Our surveys, skill programs, and job connections are designed for young women as much as young men — because when a young woman gets skilled and employed, she invests back into her family and community more than almost anyone else.',
+      callout_b_kn: 'ಡಾ. ಅಂಬೇಡ್ಕರ್ ಹೇಳಿದರು — ಸಮುದಾಯದ ಪ್ರಗತಿಯನ್ನು ಮಹಿಳೆಯರ ಪ್ರಗತಿಯ ಮಟ್ಟದಿಂದ ಅಳೆಯುತ್ತೇನೆ. ನಮ್ಮ ಕಾರ್ಯಕ್ರಮಗಳು ಯುವತಿಯರಿಗೂ ಯುವಕರಿಗೂ ಸಮಾನ.',
+      pull_en: 'We show our incomplete numbers. Because honesty is the only reform that lasts.', pull_kn: 'ನಾವು ಅಪೂರ್ಣ ಸಂಖ್ಯೆಗಳನ್ನು ತೋರಿಸುತ್ತೇವೆ. ಏಕೆಂದರೆ ಪ್ರಾಮಾಣಿಕತೆ ಮಾತ್ರ ಶಾಶ್ವತವಾಗಿ ಉಳಿಯುವ ಸುಧಾರಣೆ.'
+    },
+    aspiration: {
+      quote_en: 'Small aim is a crime.', quote_kn: 'ಸಣ್ಣ ಗುರಿ ಅಪರಾಧ.',
+      attr_en: '— Dr. A.P.J. Abdul Kalam', attr_kn: '— ಡಾ. ಎ.ಪಿ.ಜೆ. ಅಬ್ದುಲ್ ಕಲಾಂ',
+      heading_en: 'The biggest crisis is unexpressed aspiration.', heading_kn: 'ಅತಿ ದೊಡ್ಡ ಬಿಕ್ಕಟ್ಟು ಅಭಿವ್ಯಕ್ತವಾಗದ ಆಕಾಂಕ್ಷೆ.',
+      body_en: 'The biggest crisis among rural youth is not unemployment. It is unexpressed aspiration — the young woman who wanted to be an accountant but never told anyone, the young man who assumed engineering was not for someone like him. KIRAN Foundation\'s first job is to sit with these young people and ask: what do you actually want? Not what your family expects. Not what seems realistic. What do you genuinely want your life to look like? We do not decide what the village needs and then deliver it. We ask. We listen. Then we build.',
+      body_kn: 'ಗ್ರಾಮೀಣ ಯುವಕ-ಯುವತಿಯರ ಅತಿ ದೊಡ್ಡ ಬಿಕ್ಕಟ್ಟು ನಿರುದ್ಯೋಗವಲ್ಲ. ಅದು ಅಭಿವ್ಯಕ್ತವಾಗದ ಆಕಾಂಕ್ಷೆ. ನಾವು ಮೊದಲು ಕೇಳುತ್ತೇವೆ, ನಂತರ ಕಟ್ಟುತ್ತೇವೆ.',
+      callout_h_en: 'Our North Star', callout_h_kn: 'ನಮ್ಮ ಮಾರ್ಗದರ್ಶಿ ಧ್ರುವ',
+      callout_b_en: 'Dr. Kalam said the youth need to be enabled to become job generators from job seekers. That is our goal — not just placing young people in jobs, but building the generation that creates jobs for the next one.',
+      callout_b_kn: 'ಡಾ. ಕಲಾಂ ಹೇಳಿದರು — ಯುವಕರು ಉದ್ಯೋಗ ಹುಡುಕುವವರಿಂದ ಉದ್ಯೋಗ ಸೃಷ್ಟಿಸುವವರಾಗಬೇಕು. ಅದೇ ನಮ್ಮ ಗುರಿ.',
+      pull_en: 'Every survey we run is us asking: what does this village actually dream of?', pull_kn: 'ನಾವು ನಡೆಸುವ ಪ್ರತಿ ಸಮೀಕ್ಷೆ ನಮ್ಮ ಪ್ರಶ್ನೆ: ಈ ಗ್ರಾಮ ನಿಜವಾಗಿ ಏನನ್ನು ಕನಸು ಕಾಣುತ್ತದೆ?'
+    }
+  };
+
+  var activePillar = null;
+  var panelWrapper = document.getElementById('pillar-panel-wrapper');
+  var panelInner = document.getElementById('pillar-panel');
+
+  function buildPanelHTML(key) {
+    var d = pillarData[key];
+    var lang = getCurrentLang();
+    return '<div class="pp-columns">' +
+      '<div class="pp-quote-col">' +
+        '<div class="pp-leader-quote" data-en="' + d.quote_en + '" data-kn="' + d.quote_kn + '">' + (lang === 'kn' ? d.quote_kn : d.quote_en) + '</div>' +
+        '<div class="pp-attribution" data-en="' + d.attr_en + '" data-kn="' + d.attr_kn + '">' + (lang === 'kn' ? d.attr_kn : d.attr_en) + '</div>' +
+      '</div>' +
+      '<div class="pp-content-col">' +
+        '<h3 class="pp-heading" data-en="' + d.heading_en + '" data-kn="' + d.heading_kn + '">' + (lang === 'kn' ? d.heading_kn : d.heading_en) + '</h3>' +
+        '<p class="pp-body" data-en="' + d.body_en + '" data-kn="' + d.body_kn + '">' + (lang === 'kn' ? d.body_kn : d.body_en) + '</p>' +
+        '<div class="pp-callout">' +
+          '<div class="pp-callout-heading" data-en="' + d.callout_h_en + '" data-kn="' + d.callout_h_kn + '">' + (lang === 'kn' ? d.callout_h_kn : d.callout_h_en) + '</div>' +
+          '<div class="pp-callout-body" data-en="' + d.callout_b_en + '" data-kn="' + d.callout_b_kn + '">' + (lang === 'kn' ? d.callout_b_kn : d.callout_b_en) + '</div>' +
+        '</div>' +
+      '</div>' +
+    '</div>' +
+    '<div class="pp-pullquote">' +
+      '<div class="pp-pullquote-text" data-en="' + d.pull_en + '" data-kn="' + d.pull_kn + '">' + (lang === 'kn' ? d.pull_kn : d.pull_en) + '</div>' +
+    '</div>';
+  }
+
+  function togglePillar(key) {
+    var cards = document.querySelectorAll('.value-card[data-pillar]');
+
+    if (activePillar === key) {
+      panelWrapper.classList.remove('open');
+      cards.forEach(function (c) { c.classList.remove('active'); c.setAttribute('aria-expanded', 'false'); });
+      activePillar = null;
+      return;
+    }
+
+    panelInner.innerHTML = buildPanelHTML(key);
+    cards.forEach(function (c) {
+      var isThis = c.getAttribute('data-pillar') === key;
+      c.classList.toggle('active', isThis);
+      c.setAttribute('aria-expanded', String(isThis));
+    });
+    panelWrapper.classList.add('open');
+    activePillar = key;
+
+    setTimeout(function () {
+      panelWrapper.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 100);
+  }
+
+  document.querySelectorAll('.value-card[data-pillar]').forEach(function (card) {
+    card.addEventListener('click', function () { togglePillar(this.getAttribute('data-pillar')); });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); togglePillar(this.getAttribute('data-pillar')); }
+    });
+  });
+
+
+  // ════════════════════════════════════════
   // RENDER FUNCTIONS
   // ════════════════════════════════════════
 

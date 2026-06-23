@@ -621,7 +621,9 @@ section {
   border-radius: 12px;
   padding: clamp(14px, 2vw, 22px);
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  cursor: pointer;
+  position: relative;
 }
 
 .value-card:hover {
@@ -629,9 +631,176 @@ section {
   box-shadow: 0 8px 30px rgba(247, 147, 30, 0.15);
 }
 
+.value-card.active {
+  transform: translateY(-4px);
+  border-color: var(--sun-gold);
+  box-shadow: 0 0 0 2px var(--sun-gold), 0 8px 30px rgba(247, 147, 30, 0.2);
+}
+
+.card-chevron {
+  display: none;
+  position: absolute;
+  bottom: -2px; left: 50%;
+  transform: translateX(-50%);
+  color: var(--sun-gold);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.value-card.active .card-chevron { display: block; }
+
 .value-card .icon { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 8px; }
 .value-card h4 { font-size: clamp(0.82rem, 1vw, 0.95rem); color: var(--sun-amber); margin-bottom: 4px; }
 .value-card p { font-size: clamp(0.72rem, 0.8vw + 0.2rem, 0.82rem); color: rgba(255, 255, 255, 0.6); }
+
+/* ── Mission Banner ── */
+.mission-banner {
+  margin-top: clamp(16px, 2.5vw, 24px);
+  padding: clamp(18px, 3vw, 28px) clamp(20px, 3vw, 32px);
+  background: rgba(15, 52, 96, 0.4);
+  border: 1px solid rgba(247, 147, 30, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(247, 147, 30, 0.06);
+  text-align: center;
+}
+
+.mission-banner p {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1rem, 1.5vw + 0.3rem, 1.25rem);
+  font-style: italic;
+  color: var(--sun-gold);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* ── Pillar Expand Panel ── */
+.pillar-panel-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  margin-top: clamp(16px, 2vw, 24px);
+}
+
+.pillar-panel-wrapper.open {
+  max-height: 2000px;
+}
+
+.pillar-panel {
+  background: rgba(10, 20, 35, 0.7);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.pp-columns {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .pp-columns { flex-direction: row; }
+}
+
+.pp-quote-col {
+  padding: clamp(24px, 3vw, 40px);
+  background: rgba(8, 15, 26, 0.6);
+  border-left: 4px solid var(--deep-orange);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .pp-quote-col { width: 40%; flex-shrink: 0; }
+}
+
+.pp-leader-quote {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.1rem, 1.5vw + 0.3rem, 1.4rem);
+  font-style: italic;
+  color: var(--sun-gold);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.pp-leader-quote::before { content: '\201C'; }
+.pp-leader-quote::after { content: '\201D'; }
+
+.pp-attribution {
+  font-size: clamp(0.78rem, 0.7vw + 0.2rem, 0.88rem);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.pp-content-col {
+  padding: clamp(24px, 3vw, 40px);
+  flex: 1;
+}
+
+.pp-heading {
+  font-size: clamp(1.15rem, 1.5vw + 0.3rem, 1.5rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: clamp(12px, 1.5vw, 18px);
+}
+
+.pp-body {
+  font-size: clamp(0.88rem, 0.8vw + 0.3rem, 1rem);
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.7;
+  margin-bottom: clamp(16px, 2vw, 24px);
+}
+
+.pp-callout {
+  background: rgba(255, 255, 255, 0.04);
+  border-left: 3px solid var(--sun-gold);
+  border-radius: 0 8px 8px 0;
+  padding: clamp(14px, 2vw, 22px) clamp(16px, 2vw, 24px);
+}
+
+.pp-callout-heading {
+  font-size: clamp(0.92rem, 0.8vw + 0.3rem, 1.05rem);
+  font-weight: 700;
+  color: var(--sun-amber);
+  margin-bottom: 8px;
+}
+
+.pp-callout-body {
+  font-size: clamp(0.85rem, 0.7vw + 0.3rem, 0.95rem);
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+}
+
+.pp-pullquote {
+  position: relative;
+  text-align: center;
+  padding: clamp(28px, 4vw, 48px) clamp(24px, 4vw, 48px);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
+}
+
+.pp-pullquote::before {
+  content: '\201C';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(10rem, 20vw, 18rem);
+  font-family: Georgia, serif;
+  color: var(--sun-gold);
+  opacity: 0.07;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.pp-pullquote-text {
+  position: relative;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.15rem, 1.5vw + 0.4rem, 1.6rem);
+  font-style: italic;
+  color: var(--sun-gold);
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0 auto;
+}
 
 
 /* ═══════════════════════════════════════════

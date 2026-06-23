@@ -1161,8 +1161,25 @@
     footer:   'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1920&q=80'
   };
 
+  function opacityToOverlay(sectionKey, opacityPercent) {
+    var alpha = 1 - (opacityPercent / 100);
+    var a1 = alpha.toFixed(2);
+    var a2 = Math.min(alpha + 0.04, 1).toFixed(2);
+    if (sectionKey === 'register') {
+      return 'rgba(22,33,62,' + a1 + '),rgba(15,52,96,' + a2 + ')';
+    }
+    if (sectionKey === 'impact') {
+      return 'rgba(5,8,18,' + a1 + '),rgba(5,8,18,' + a2 + ')';
+    }
+    if (sectionKey === 'footer') {
+      return 'rgba(10,18,36,' + a1 + '),rgba(10,18,36,' + a2 + ')';
+    }
+    return 'rgba(16,26,50,' + a1 + '),rgba(16,26,50,' + a2 + ')';
+  }
+
   function applyBackgrounds(cmsItems) {
     var bgMap = {};
+    var opacityMap = {};
     Object.keys(BG_FALLBACKS).forEach(function (k) { bgMap[k] = BG_FALLBACKS[k]; });
 
     if (cmsItems && cmsItems.length) {
@@ -1170,6 +1187,9 @@
         var key = (item.section_key || '').trim();
         var url = (item.photo || '').trim();
         if (key && url) bgMap[key] = url;
+        if (key && item.opacity != null && item.opacity !== '' && !isNaN(item.opacity)) {
+          opacityMap[key] = parseFloat(item.opacity);
+        }
       });
     }
 
@@ -1180,8 +1200,16 @@
           var key = el.getAttribute('data-bg-section');
           var url = bgMap[key];
           if (!url) return;
-          var overlayAttr = el.getAttribute('data-overlay') || 'rgba(16,26,50,0.85),rgba(16,26,50,0.88)';
-          var parts = overlayAttr.split(',rgba');
+
+          var overlay;
+          if (opacityMap[key] != null) {
+            overlay = opacityToOverlay(key, opacityMap[key]);
+          } else {
+            var overlayAttr = el.getAttribute('data-overlay') || 'rgba(16,26,50,0.85),rgba(16,26,50,0.88)';
+            overlay = overlayAttr;
+          }
+
+          var parts = overlay.split(',rgba');
           var c1 = parts[0];
           var c2 = parts.length > 1 ? 'rgba' + parts[1] : c1;
           el.style.backgroundImage = 'linear-gradient(' + c1 + ',' + c2 + '), url(\'' + url + '\')';

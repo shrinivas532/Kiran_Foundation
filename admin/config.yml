@@ -191,6 +191,16 @@ collections:
                 widget: "image"
                 required: false
                 hint: "Upload a wide landscape photo. Leave empty to use default."
+              - name: "opacity"
+                label: "Photo Visibility % (how much photo shows through)"
+                widget: "number"
+                value_type: "float"
+                min: 5
+                max: 50
+                step: 5
+                default: 15
+                required: false
+                hint: "5 = barely visible (very dark), 15 = default, 25 = clearly visible, 40 = strong photo, 50 = maximum. Leave blank for default (15%)."
 
       - name: "settings"
         label: "Site Settings"

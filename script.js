@@ -341,12 +341,12 @@
     var lang = getCurrentLang();
     return '<div class="pp-columns">' +
       '<div class="pp-quote-col">' +
-        '<div class="pp-photo">' +
-          '<img src="' + d.photo + '" alt="' + (lang === 'kn' ? d.attr_kn : d.attr_en) + '" onerror="this.classList.add(\'hidden\')">' +
-          '<span class="pp-photo-initials">' + d.initials + '</span>' +
+        '<img class="pp-portrait" src="' + d.photo + '" alt="' + (lang === 'kn' ? d.attr_kn : d.attr_en) + '" onerror="this.classList.add(\'hidden\')">' +
+        '<div class="pp-portrait-fallback"><span class="pp-initials">' + d.initials + '</span></div>' +
+        '<div class="pp-quote-text-wrap">' +
+          '<div class="pp-leader-quote" data-en="' + d.quote_en + '" data-kn="' + d.quote_kn + '">' + (lang === 'kn' ? d.quote_kn : d.quote_en) + '</div>' +
+          '<div class="pp-attribution" data-en="' + d.attr_en + '" data-kn="' + d.attr_kn + '">' + (lang === 'kn' ? d.attr_kn : d.attr_en) + '</div>' +
         '</div>' +
-        '<div class="pp-leader-quote" data-en="' + d.quote_en + '" data-kn="' + d.quote_kn + '">' + (lang === 'kn' ? d.quote_kn : d.quote_en) + '</div>' +
-        '<div class="pp-attribution" data-en="' + d.attr_en + '" data-kn="' + d.attr_kn + '">' + (lang === 'kn' ? d.attr_kn : d.attr_en) + '</div>' +
       '</div>' +
       '<div class="pp-content-col">' +
         '<h3 class="pp-heading" data-en="' + d.heading_en + '" data-kn="' + d.heading_kn + '">' + (lang === 'kn' ? d.heading_kn : d.heading_en) + '</h3>' +

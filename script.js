@@ -1055,4 +1055,47 @@
     });
   }
 
+
+  // ════════════════════════════════════════
+  // LAZY BACKGROUND IMAGES
+  // ════════════════════════════════════════
+
+  var bgTargets = document.querySelectorAll(
+    '#about, #programs, #gallery, #podcast, #videos, #impact, #stories, #press, #register, #contact, .footer, .hero'
+  );
+
+  var bgObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('bg-loaded');
+        bgObserver.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '200px' });
+
+  bgTargets.forEach(function (el) { bgObserver.observe(el); });
+
+
+  // ════════════════════════════════════════
+  // SECTION ENTRY ANIMATIONS
+  // ════════════════════════════════════════
+
+  document.querySelectorAll('.section-header h2').forEach(function (el) { el.classList.add('anim-target'); });
+  document.querySelectorAll('.section-header .section-line').forEach(function (el) { el.classList.add('anim-target', 'anim-delay-1'); });
+  document.querySelectorAll('.section-header > p').forEach(function (el) { el.classList.add('anim-target', 'anim-delay-2'); });
+  document.querySelectorAll('.hero-badge').forEach(function (el) { el.classList.add('anim-target'); });
+  document.querySelectorAll('.hero h1').forEach(function (el) { el.classList.add('anim-target', 'anim-delay-1'); });
+  document.querySelectorAll('.hero-sub').forEach(function (el) { el.classList.add('anim-target', 'anim-delay-2'); });
+
+  var animObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('anim-visible');
+        animObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.anim-target').forEach(function (el) { animObserver.observe(el); });
+
 })();

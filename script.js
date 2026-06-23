@@ -272,6 +272,7 @@
 
   var pillarData = {
     knowledge: {
+      photo: '/assets/uploads/ambedkar.jpg', initials: 'BA',
       quote_en: 'Educate, Agitate, Organise.', quote_kn: 'ಶಿಕ್ಷಣ, ಹೋರಾಟ, ಸಂಘಟನೆ.',
       attr_en: '— Dr. B.R. Ambedkar', attr_kn: '— ಡಾ. ಬಿ.ಆರ್. ಅಂಬೇಡ್ಕರ್',
       heading_en: 'Knowledge is not a luxury. It is a right.', heading_kn: 'ಜ್ಞಾನ ಐಶ್ವರ್ಯವಲ್ಲ. ಅದು ಹಕ್ಕು.',
@@ -283,6 +284,7 @@
       pull_en: 'We do not bring answers. We bring the tools to find them.', pull_kn: 'ನಾವು ಉತ್ತರಗಳನ್ನು ತರುವುದಿಲ್ಲ. ಉತ್ತರ ಹುಡುಕುವ ಸಾಧನಗಳನ್ನು ತರುತ್ತೇವೆ.'
     },
     innovation: {
+      photo: '/assets/uploads/kalam.jpg', initials: 'AK',
       quote_en: 'Out of box thinking is the need of the hour for village development.', quote_kn: 'ಗ್ರಾಮ ಅಭಿವೃದ್ಧಿಗೆ ಹೊಸ ಚಿಂತನೆ ಇಂದಿನ ಅಗತ್ಯ.',
       attr_en: '— Dr. A.P.J. Abdul Kalam', attr_kn: '— ಡಾ. ಎ.ಪಿ.ಜೆ. ಅಬ್ದುಲ್ ಕಲಾಂ',
       heading_en: 'The solution is removing distance, not adding complexity.', heading_kn: 'ಪರಿಹಾರ ದೂರ ಕಡಿಮೆ ಮಾಡುವುದು, ಸಂಕೀರ್ಣತೆ ಹೆಚ್ಚಿಸುವುದಲ್ಲ.',
@@ -294,6 +296,7 @@
       pull_en: 'The distance between a skilled youth and a waiting employer is the only problem we are here to solve.', pull_kn: 'ಕೌಶಲ್ಯವಂತ ಯುವಕ ಮತ್ತು ಕಾಯುತ್ತಿರುವ ಉದ್ಯೋಗದಾತರ ನಡುವಿನ ಅಂತರ ಕಡಿಮೆ ಮಾಡಲು ನಾವಿದ್ದೇವೆ.'
     },
     reform: {
+      photo: '/assets/uploads/ambedkar.jpg', initials: 'BA',
       quote_en: 'A great man is different from an eminent one in that he is ready to be the servant of society.', quote_kn: 'ಶ್ರೇಷ್ಠ ವ್ಯಕ್ತಿ ಸಮಾಜದ ಸೇವಕನಾಗಲು ಸಿದ್ಧನಾಗಿರುತ್ತಾನೆ.',
       attr_en: '— Dr. B.R. Ambedkar', attr_kn: '— ಡಾ. ಬಿ.ಆರ್. ಅಂಬೇಡ್ಕರ್',
       heading_en: 'Reform is not politics. Reform is accountability.', heading_kn: 'ಸುಧಾರಣೆ ರಾಜಕೀಯವಲ್ಲ. ಸುಧಾರಣೆ ಜವಾಬ್ದಾರಿ.',
@@ -305,6 +308,7 @@
       pull_en: 'We show our incomplete numbers. Because honesty is the only reform that lasts.', pull_kn: 'ನಾವು ಅಪೂರ್ಣ ಸಂಖ್ಯೆಗಳನ್ನು ತೋರಿಸುತ್ತೇವೆ. ಏಕೆಂದರೆ ಪ್ರಾಮಾಣಿಕತೆ ಮಾತ್ರ ಶಾಶ್ವತವಾಗಿ ಉಳಿಯುವ ಸುಧಾರಣೆ.'
     },
     aspiration: {
+      photo: '/assets/uploads/kalam.jpg', initials: 'AK',
       quote_en: 'Small aim is a crime.', quote_kn: 'ಸಣ್ಣ ಗುರಿ ಅಪರಾಧ.',
       attr_en: '— Dr. A.P.J. Abdul Kalam', attr_kn: '— ಡಾ. ಎ.ಪಿ.ಜೆ. ಅಬ್ದುಲ್ ಕಲಾಂ',
       heading_en: 'The biggest crisis is unexpressed aspiration.', heading_kn: 'ಅತಿ ದೊಡ್ಡ ಬಿಕ್ಕಟ್ಟು ಅಭಿವ್ಯಕ್ತವಾಗದ ಆಕಾಂಕ್ಷೆ.',
@@ -326,6 +330,10 @@
     var lang = getCurrentLang();
     return '<div class="pp-columns">' +
       '<div class="pp-quote-col">' +
+        '<div class="pp-photo">' +
+          '<img src="' + d.photo + '" alt="' + (lang === 'kn' ? d.attr_kn : d.attr_en) + '" onerror="this.classList.add(\'hidden\')">' +
+          '<span class="pp-photo-initials">' + d.initials + '</span>' +
+        '</div>' +
         '<div class="pp-leader-quote" data-en="' + d.quote_en + '" data-kn="' + d.quote_kn + '">' + (lang === 'kn' ? d.quote_kn : d.quote_en) + '</div>' +
         '<div class="pp-attribution" data-en="' + d.attr_en + '" data-kn="' + d.attr_kn + '">' + (lang === 'kn' ? d.attr_kn : d.attr_en) + '</div>' +
       '</div>' +
